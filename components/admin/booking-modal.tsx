@@ -35,6 +35,12 @@ export function BookingModal({
   const [guestName, setGuestName] = useState("");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+  const [checkInTime, setCheckInTime] = useState("");
+  const [checkOutTime, setCheckOutTime] = useState("");
+  const [parkingSpot, setParkingSpot] = useState("");
+  const [amount, setAmount] = useState("");
+  const [amountDue, setAmountDue] = useState("");
+  const [touristTax, setTouristTax] = useState("");
   const [notes, setNotes] = useState("");
   const [source, setSource] = useState<BookingSource>("privato");
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(room);
@@ -47,6 +53,12 @@ export function BookingModal({
       setGuestName(editBooking.guestName);
       setCheckIn(editBooking.checkIn);
       setCheckOut(editBooking.checkOut);
+      setCheckInTime(editBooking.checkInTime || "");
+      setCheckOutTime(editBooking.checkOutTime || "");
+      setParkingSpot(editBooking.parkingSpot || "");
+      setAmount(editBooking.amount != null ? String(editBooking.amount) : "");
+      setAmountDue(editBooking.amountDue != null ? String(editBooking.amountDue) : "");
+      setTouristTax(editBooking.touristTax || "");
       setNotes(editBooking.notes);
       setSource(editBooking.source);
       setSelectedRoom(editBooking.room);
@@ -54,6 +66,12 @@ export function BookingModal({
       setGuestName("");
       setCheckIn("");
       setCheckOut("");
+      setCheckInTime("");
+      setCheckOutTime("");
+      setParkingSpot("");
+      setAmount("");
+      setAmountDue("");
+      setTouristTax("");
       setNotes("");
       setSource("privato");
       setSelectedRoom(room);
@@ -66,24 +84,32 @@ export function BookingModal({
 
     setSubmitting(true);
 
+    const parsedAmount = amount ? parseFloat(amount.replace(",", ".")) : null;
+    const parsedAmountDue = amountDue ? parseFloat(amountDue.replace(",", ".")) : null;
+    const bookingData = {
+      guestName,
+      checkIn,
+      checkOut,
+      checkInTime: checkInTime || null,
+      checkOutTime: checkOutTime || null,
+      parkingSpot: parkingSpot || null,
+      amount: parsedAmount,
+      amountDue: parsedAmountDue,
+      touristTax: touristTax || null,
+      notes,
+      source,
+    };
+
     if (isEditing) {
       await updateBooking(editBooking.id, {
-        guestName,
-        checkIn,
-        checkOut,
-        notes,
-        source,
+        ...bookingData,
         room: propertyId === "casamomi" ? selectedRoom : null,
       });
     } else {
       await addBooking({
+        ...bookingData,
         propertyId,
         room: propertyId === "casamomi" ? selectedRoom : room,
-        guestName,
-        checkIn,
-        checkOut,
-        notes,
-        source,
       });
     }
 
@@ -91,6 +117,12 @@ export function BookingModal({
     setGuestName("");
     setCheckIn("");
     setCheckOut("");
+    setCheckInTime("");
+    setCheckOutTime("");
+    setParkingSpot("");
+    setAmount("");
+    setAmountDue("");
+    setTouristTax("");
     setNotes("");
     setSource("privato");
     setSelectedRoom(room);
@@ -175,6 +207,111 @@ export function BookingModal({
                 onChange={(e) => setCheckOut(e.target.value)}
                 min={checkIn}
                 required
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="checkInTime"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.checkinTime")}
+              </label>
+              <Input
+                id="checkInTime"
+                type="text"
+                placeholder="es. 20:30"
+                value={checkInTime}
+                onChange={(e) => setCheckInTime(e.target.value)}
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="checkOutTime"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.checkoutTime")}
+              </label>
+              <Input
+                id="checkOutTime"
+                type="text"
+                placeholder="es. 10:00"
+                value={checkOutTime}
+                onChange={(e) => setCheckOutTime(e.target.value)}
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="amount"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.amount")}
+              </label>
+              <Input
+                id="amount"
+                type="text"
+                placeholder="es. 352,41"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="amountDue"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.amountDue")}
+              </label>
+              <Input
+                id="amountDue"
+                type="text"
+                placeholder="es. 1155,00"
+                value={amountDue}
+                onChange={(e) => setAmountDue(e.target.value)}
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="touristTax"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.touristTax")}
+              </label>
+              <Input
+                id="touristTax"
+                type="text"
+                placeholder="es. € 30 IN CONTANTI"
+                value={touristTax}
+                onChange={(e) => setTouristTax(e.target.value)}
+                className="w-full"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="parkingSpot"
+                className="mb-2 block text-sm font-medium text-foreground"
+              >
+                {t("admin.parkingSpot")}
+              </label>
+              <Input
+                id="parkingSpot"
+                type="text"
+                placeholder="es. € 45 IN CONTANTI"
+                value={parkingSpot}
+                onChange={(e) => setParkingSpot(e.target.value)}
                 className="w-full"
               />
             </div>

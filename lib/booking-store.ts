@@ -13,6 +13,12 @@ export interface Booking {
   guestName: string;
   checkIn: string;
   checkOut: string;
+  checkInTime: string | null;
+  checkOutTime: string | null;
+  parkingSpot: string | null;
+  amount: number | null;
+  amountDue: number | null;
+  touristTax: string | null;
   notes: string;
   source: BookingSource;
 }
@@ -24,6 +30,12 @@ interface BookingRow {
   guest_name: string;
   check_in: string;
   check_out: string;
+  check_in_time: string | null;
+  check_out_time: string | null;
+  parking_spot: string | null;
+  amount: number | null;
+  amount_due: number | null;
+  tourist_tax: string | null;
   notes: string;
   source: string;
   created_at: string;
@@ -37,6 +49,12 @@ function rowToBooking(row: BookingRow): Booking {
     guestName: row.guest_name,
     checkIn: row.check_in,
     checkOut: row.check_out,
+    checkInTime: row.check_in_time,
+    checkOutTime: row.check_out_time,
+    parkingSpot: row.parking_spot,
+    amount: row.amount,
+    amountDue: row.amount_due,
+    touristTax: row.tourist_tax,
     notes: row.notes,
     source: (row.source as BookingSource) || "privato",
   };
@@ -81,6 +99,12 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
         guest_name: booking.guestName,
         check_in: booking.checkIn,
         check_out: booking.checkOut,
+        check_in_time: booking.checkInTime,
+        check_out_time: booking.checkOutTime,
+        parking_spot: booking.parkingSpot,
+        amount: booking.amount,
+        amount_due: booking.amountDue,
+        tourist_tax: booking.touristTax,
         notes: booking.notes,
         source: booking.source,
       })
@@ -114,6 +138,12 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
     if (updates.guestName !== undefined) dbUpdates.guest_name = updates.guestName;
     if (updates.checkIn !== undefined) dbUpdates.check_in = updates.checkIn;
     if (updates.checkOut !== undefined) dbUpdates.check_out = updates.checkOut;
+    if (updates.checkInTime !== undefined) dbUpdates.check_in_time = updates.checkInTime;
+    if (updates.checkOutTime !== undefined) dbUpdates.check_out_time = updates.checkOutTime;
+    if (updates.parkingSpot !== undefined) dbUpdates.parking_spot = updates.parkingSpot;
+    if (updates.amount !== undefined) dbUpdates.amount = updates.amount;
+    if (updates.amountDue !== undefined) dbUpdates.amount_due = updates.amountDue;
+    if (updates.touristTax !== undefined) dbUpdates.tourist_tax = updates.touristTax;
     if (updates.notes !== undefined) dbUpdates.notes = updates.notes;
     if (updates.source !== undefined) dbUpdates.source = updates.source;
 

@@ -17,6 +17,12 @@ export interface Database {
           guest_name: string;
           check_in: string;
           check_out: string;
+          check_in_time: string | null;
+          check_out_time: string | null;
+          parking_spot: string | null;
+          amount: number | null;
+          amount_due: number | null;
+          tourist_tax: string | null;
           notes: string;
           source: "airbnb" | "booking" | "privato";
           created_at: string;
@@ -28,6 +34,12 @@ export interface Database {
           guest_name: string;
           check_in: string;
           check_out: string;
+          check_in_time?: string | null;
+          check_out_time?: string | null;
+          parking_spot?: string | null;
+          amount?: number | null;
+          amount_due?: number | null;
+          tourist_tax?: string | null;
           notes?: string;
           source?: "airbnb" | "booking" | "privato";
           created_at?: string;
@@ -39,6 +51,12 @@ export interface Database {
           guest_name?: string;
           check_in?: string;
           check_out?: string;
+          check_in_time?: string | null;
+          check_out_time?: string | null;
+          parking_spot?: string | null;
+          amount?: number | null;
+          amount_due?: number | null;
+          tourist_tax?: string | null;
           notes?: string;
           source?: "airbnb" | "booking" | "privato";
           created_at?: string;
