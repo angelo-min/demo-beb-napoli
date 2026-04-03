@@ -3,7 +3,8 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage, publicLanguages, publicLanguageLabels } from "@/lib/i18n";
+import { useLanguage } from "@/lib/i18n";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import {
   Mountain,
   Coffee,
@@ -89,7 +90,7 @@ export interface PropertyConfig {
 }
 
 export function PropertyPage({ config }: { config: PropertyConfig }) {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -117,12 +118,6 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
     };
   }, [lightboxIndex, closeLightbox, prevPhoto, nextPhoto]);
 
-  const cycleLanguage = () => {
-    const idx = publicLanguages.indexOf(language);
-    const next = publicLanguages[(idx + 1) % publicLanguages.length];
-    setLanguage(next);
-  };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -138,13 +133,7 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
             </span>
           </Link>
 
-          <button
-            onClick={cycleLanguage}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            aria-label="Switch language"
-          >
-            {publicLanguageLabels[language]}
-          </button>
+          <LanguageSwitcher />
         </nav>
       </header>
 

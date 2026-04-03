@@ -66,7 +66,7 @@ function AdminContent() {
               onClick={toggleLanguage}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             >
-              {t("lang.switch")}
+              {language === "it" ? "EN" : "IT"}
             </button>
             <button
               onClick={signOut}
