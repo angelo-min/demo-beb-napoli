@@ -36,7 +36,7 @@ const dayKeys = [
   "day.sun",
 ];
 
-type DayStatus = "available" | "booked" | "checkin" | "checkout";
+type DayStatus = "available" | "booked" | "checkin" | "checkout" | "partially_booked";
 
 export function AvailabilityCalendar({
   propertyId,
@@ -53,6 +53,20 @@ export function AvailabilityCalendar({
             ? true
             : b.room === room || b.room === "whole")
       ),
+    [allBookings, propertyId, room]
+  );
+
+  // When viewing "whole", track room-level bookings to show partial unavailability
+  const roomBookings = useMemo(
+    () =>
+      room === "whole"
+        ? allBookings.filter(
+            (b) =>
+              b.propertyId === propertyId &&
+              b.room !== "whole" &&
+              b.room !== null
+          )
+        : [],
     [allBookings, propertyId, room]
   );
 
@@ -74,6 +88,14 @@ export function AvailabilityCalendar({
       if (dateStr === booking.checkOut) return "checkout";
       if (dateStr > booking.checkIn && dateStr < booking.checkOut)
         return "booked";
+    }
+    // When viewing "whole", check if any individual room is booked
+    if (room === "whole") {
+      for (const booking of roomBookings) {
+        if (dateStr >= booking.checkIn && dateStr < booking.checkOut) {
+          return "partially_booked";
+        }
+      }
     }
     return "available";
   };
@@ -98,7 +120,7 @@ export function AvailabilityCalendar({
     }
     return result;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [year, month, bookings]);
+  }, [year, month, bookings, roomBookings]);
 
   const handleDateClick = (dateStr: string) => {
     if (!selectionStart) {
@@ -130,7 +152,19 @@ export function AvailabilityCalendar({
       case "checkin":
       case "checkout":
         return "bg-amber-100 text-amber-900";
+      case "partially_booked":
+        return "text-orange-900";
     }
+  };
+
+  const getStatusStyle = (status: DayStatus): React.CSSProperties | undefined => {
+    if (status === "partially_booked") {
+      return {
+        background:
+          "repeating-linear-gradient(-45deg, #fed7aa, #fed7aa 4px, #fef3c7 4px, #fef3c7 8px)",
+      };
+    }
+    return undefined;
   };
 
   return (
@@ -175,6 +209,7 @@ export function AvailabilityCalendar({
               key={dateStr}
               onClick={() => handleDateClick(dateStr)}
               className={`flex h-10 items-center justify-center rounded-sm text-sm font-medium transition-all md:h-12 ${getStatusColor(status, isSelected)}`}
+              style={getStatusStyle(status)}
             >
               {day}
             </button>
@@ -198,6 +233,20 @@ export function AvailabilityCalendar({
             {t("legend.transition")}
           </span>
         </div>
+        {room === "whole" && (
+          <div className="flex items-center gap-2">
+            <div
+              className="h-4 w-4 rounded-sm"
+              style={{
+                background:
+                  "repeating-linear-gradient(-45deg, #fed7aa, #fed7aa 4px, #fef3c7 4px, #fef3c7 8px)",
+              }}
+            />
+            <span className="text-muted-foreground">
+              {t("legend.partiallyBooked")}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Selection Info */}

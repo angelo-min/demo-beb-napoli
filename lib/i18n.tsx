@@ -449,6 +449,7 @@ export const translations: Translations = {
   "legend.available": { it: "Disponibile", en: "Available" },
   "legend.booked": { it: "Prenotato", en: "Booked" },
   "legend.transition": { it: "Check-in/out", en: "Check-in/out" },
+  "legend.partiallyBooked": { it: "Stanza occupata", en: "Room occupied" },
 
   // Days of week (IT/EN only)
   "day.mon": { it: "Lun", en: "Mon" },
