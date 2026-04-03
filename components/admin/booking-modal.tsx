@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import { useBookingStore, type Room } from "@/lib/booking-store";
+import { useBookingStore, type Room, type Booking, type BookingSource } from "@/lib/booking-store";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -12,42 +12,88 @@ interface BookingModalProps {
   room: Room | null;
   isOpen: boolean;
   onClose: () => void;
+  editBooking?: Booking | null;
 }
+
+const SOURCE_OPTIONS: { value: BookingSource; label: string }[] = [
+  { value: "privato", label: "Privato" },
+  { value: "airbnb", label: "Airbnb" },
+  { value: "booking", label: "Booking.com" },
+];
 
 export function BookingModal({
   propertyId,
   room,
   isOpen,
   onClose,
+  editBooking,
 }: BookingModalProps) {
   const { t } = useLanguage();
   const addBooking = useBookingStore((state) => state.addBooking);
+  const updateBooking = useBookingStore((state) => state.updateBooking);
 
   const [guestName, setGuestName] = useState("");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [notes, setNotes] = useState("");
+  const [source, setSource] = useState<BookingSource>("privato");
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(room);
   const [submitting, setSubmitting] = useState(false);
+
+  const isEditing = !!editBooking;
+
+  useEffect(() => {
+    if (editBooking) {
+      setGuestName(editBooking.guestName);
+      setCheckIn(editBooking.checkIn);
+      setCheckOut(editBooking.checkOut);
+      setNotes(editBooking.notes);
+      setSource(editBooking.source);
+      setSelectedRoom(editBooking.room);
+    } else {
+      setGuestName("");
+      setCheckIn("");
+      setCheckOut("");
+      setNotes("");
+      setSource("privato");
+      setSelectedRoom(room);
+    }
+  }, [editBooking, room]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!guestName || !checkIn || !checkOut) return;
 
     setSubmitting(true);
-    await addBooking({
-      propertyId,
-      room,
-      guestName,
-      checkIn,
-      checkOut,
-      notes,
-    });
-    setSubmitting(false);
 
+    if (isEditing) {
+      await updateBooking(editBooking.id, {
+        guestName,
+        checkIn,
+        checkOut,
+        notes,
+        source,
+        room: propertyId === "casamomi" ? selectedRoom : null,
+      });
+    } else {
+      await addBooking({
+        propertyId,
+        room: propertyId === "casamomi" ? selectedRoom : room,
+        guestName,
+        checkIn,
+        checkOut,
+        notes,
+        source,
+      });
+    }
+
+    setSubmitting(false);
     setGuestName("");
     setCheckIn("");
     setCheckOut("");
     setNotes("");
+    setSource("privato");
+    setSelectedRoom(room);
     onClose();
   };
 
@@ -72,9 +118,9 @@ export function BookingModal({
         </button>
 
         <h2 className="font-serif text-2xl font-medium text-foreground">
-          {t("admin.add")}
+          {isEditing ? t("admin.edit") : t("admin.add")}
         </h2>
-        {propertyId === "casamomi" && room && (
+        {propertyId === "casamomi" && !isEditing && room && (
           <p className="mt-1 text-sm text-muted-foreground">
             {t(`admin.room.${room}`)}
           </p>
@@ -133,6 +179,54 @@ export function BookingModal({
               />
             </div>
           </div>
+
+          {/* Source selector */}
+          <div>
+            <label className="mb-2 block text-sm font-medium text-foreground">
+              {t("admin.source")}
+            </label>
+            <div className="flex gap-2">
+              {SOURCE_OPTIONS.map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setSource(opt.value)}
+                  className={`flex-1 rounded-sm border px-3 py-2 text-sm font-medium transition-colors ${
+                    source === opt.value
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-input bg-background text-foreground hover:bg-secondary/50"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Room selector for Casa Momi when editing */}
+          {propertyId === "casamomi" && isEditing && (
+            <div>
+              <label className="mb-2 block text-sm font-medium text-foreground">
+                {t("admin.room")}
+              </label>
+              <div className="flex gap-2">
+                {(["gold", "silver", "whole"] as Room[]).map((r) => (
+                  <button
+                    key={r}
+                    type="button"
+                    onClick={() => setSelectedRoom(r)}
+                    className={`flex-1 rounded-sm border px-3 py-2 text-sm font-medium transition-colors ${
+                      selectedRoom === r
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-input bg-background text-foreground hover:bg-secondary/50"
+                    }`}
+                  >
+                    {t(`admin.room.${r}`)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div>
             <label

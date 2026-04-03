@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, publicLanguages, publicLanguageLabels } from "@/lib/i18n";
 
 export function Header() {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
-  const toggleLanguage = () => {
-    setLanguage(language === "it" ? "en" : "it");
+  const cycleLanguage = () => {
+    const idx = publicLanguages.indexOf(language);
+    const next = publicLanguages[(idx + 1) % publicLanguages.length];
+    setLanguage(next);
   };
 
   return (
@@ -22,11 +24,11 @@ export function Header() {
 
         <div className="flex items-center gap-4 md:gap-6">
           <button
-            onClick={toggleLanguage}
+            onClick={cycleLanguage}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            aria-label={`Switch to ${language === "it" ? "English" : "Italian"}`}
+            aria-label="Switch language"
           >
-            {t("lang.switch")}
+            {publicLanguageLabels[language]}
           </button>
         </div>
       </nav>

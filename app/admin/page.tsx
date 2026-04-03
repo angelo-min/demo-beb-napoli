@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Plus, Home, LogOut } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth-store";
-import { useBookingStore, type Room } from "@/lib/booking-store";
+import { useBookingStore, type Room, type Booking } from "@/lib/booking-store";
 import { AuthGuard } from "@/components/admin/auth-guard";
 import { AvailabilityCalendar } from "@/components/admin/availability-calendar";
 import { BookingList } from "@/components/admin/booking-list";
@@ -22,6 +22,7 @@ function AdminContent() {
   const [activeProperty, setActiveProperty] = useState<PropertyId>("alegria");
   const [activeRoom, setActiveRoom] = useState<Room | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
 
   useEffect(() => {
     fetchBookings();
@@ -39,6 +40,7 @@ function AdminContent() {
   const rooms: { id: Room; label: string }[] = [
     { id: "gold", label: "Gold" },
     { id: "silver", label: "Silver" },
+    { id: "whole", label: t("admin.room.whole") },
   ];
 
   return (
@@ -159,7 +161,14 @@ function AdminContent() {
                 {t("admin.add")}
               </Button>
             </div>
-            <BookingList propertyId={activeProperty} room={activeRoom} />
+            <BookingList
+              propertyId={activeProperty}
+              room={activeRoom}
+              onEdit={(booking) => {
+                setEditingBooking(booking);
+                setIsModalOpen(true);
+              }}
+            />
           </div>
         </div>
       </main>
@@ -169,7 +178,11 @@ function AdminContent() {
         propertyId={activeProperty}
         room={activeRoom}
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={() => {
+          setIsModalOpen(false);
+          setEditingBooking(null);
+        }}
+        editBooking={editingBooking}
       />
     </div>
   );

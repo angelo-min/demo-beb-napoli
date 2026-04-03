@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, publicLanguages, publicLanguageLabels } from "@/lib/i18n";
 import {
   Mountain,
   Coffee,
@@ -117,8 +117,10 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
     };
   }, [lightboxIndex, closeLightbox, prevPhoto, nextPhoto]);
 
-  const toggleLanguage = () => {
-    setLanguage(language === "it" ? "en" : "it");
+  const cycleLanguage = () => {
+    const idx = publicLanguages.indexOf(language);
+    const next = publicLanguages[(idx + 1) % publicLanguages.length];
+    setLanguage(next);
   };
 
   return (
@@ -137,11 +139,11 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
           </Link>
 
           <button
-            onClick={toggleLanguage}
+            onClick={cycleLanguage}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            aria-label={`Switch to ${language === "it" ? "English" : "Italian"}`}
+            aria-label="Switch language"
           >
-            {language === "it" ? "EN" : "IT"}
+            {publicLanguageLabels[language]}
           </button>
         </nav>
       </header>

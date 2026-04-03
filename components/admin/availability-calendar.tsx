@@ -49,7 +49,9 @@ export function AvailabilityCalendar({
       allBookings.filter(
         (b) =>
           b.propertyId === propertyId &&
-          (room === null ? true : b.room === room)
+          (room === null
+            ? true
+            : b.room === room || b.room === "whole")
       ),
     [allBookings, propertyId, room]
   );

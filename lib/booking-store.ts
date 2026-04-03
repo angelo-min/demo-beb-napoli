@@ -3,7 +3,8 @@ import { supabase } from "./supabase";
 import type { Database } from "./database.types";
 
 export type PropertyId = "alegria" | "casamomi";
-export type Room = "gold" | "silver";
+export type Room = "gold" | "silver" | "whole";
+export type BookingSource = "airbnb" | "booking" | "privato";
 
 export interface Booking {
   id: string;
@@ -13,6 +14,7 @@ export interface Booking {
   checkIn: string;
   checkOut: string;
   notes: string;
+  source: BookingSource;
 }
 
 interface BookingRow {
@@ -23,6 +25,7 @@ interface BookingRow {
   check_in: string;
   check_out: string;
   notes: string;
+  source: string;
   created_at: string;
 }
 
@@ -35,6 +38,7 @@ function rowToBooking(row: BookingRow): Booking {
     checkIn: row.check_in,
     checkOut: row.check_out,
     notes: row.notes,
+    source: (row.source as BookingSource) || "privato",
   };
 }
 
@@ -78,6 +82,7 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
         check_in: booking.checkIn,
         check_out: booking.checkOut,
         notes: booking.notes,
+        source: booking.source,
       })
       .select()
       .single();
@@ -110,6 +115,7 @@ export const useBookingStore = create<BookingStore>()((set, get) => ({
     if (updates.checkIn !== undefined) dbUpdates.check_in = updates.checkIn;
     if (updates.checkOut !== undefined) dbUpdates.check_out = updates.checkOut;
     if (updates.notes !== undefined) dbUpdates.notes = updates.notes;
+    if (updates.source !== undefined) dbUpdates.source = updates.source;
 
     const { error } = await supabase.from("bookings").update(dbUpdates).eq("id", id);
     if (error) {
