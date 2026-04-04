@@ -52,7 +52,6 @@ const alegriaConfig = {
     { titleKey: "alegria.service.terrace", descKey: "alegria.service.terrace.desc", icon: "mountain" },
     { titleKey: "alegria.service.breakfast", descKey: "alegria.service.breakfast.desc", icon: "coffee" },
     { titleKey: "alegria.service.garden", descKey: "alegria.service.garden.desc", icon: "flower" },
-    { titleKey: "alegria.service.solarium", descKey: "alegria.service.solarium.desc", icon: "sun" },
     { titleKey: "alegria.service.wifi", descKey: "alegria.service.wifi.desc", icon: "wifi" },
     { titleKey: "alegria.service.parking", descKey: "alegria.service.parking.desc", icon: "car" },
     { titleKey: "alegria.service.ac", descKey: "alegria.service.ac.desc", icon: "thermometer" },

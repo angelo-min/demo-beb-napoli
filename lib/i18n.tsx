@@ -51,23 +51,22 @@ export const translations: Translations = {
   "properties.cta": { it: "Scopri", en: "Discover", fr: "Découvrir", es: "Descubrir" },
 
   // Alegria Property
-  "alegria.name": { it: "Alegria — Nido degli Dei", en: "Alegria — Nido degli Dei", fr: "Alegria — Nido degli Dei", es: "Alegria — Nido degli Dei" },
+  "alegria.name": { it: "ALEgrìa — Nido degli Dei", en: "ALEgrìa — Nido degli Dei", fr: "ALEgrìa — Nido degli Dei", es: "ALEgrìa — Nido degli Dei" },
   "alegria.location": { it: "Agerola, Monti Lattari", en: "Agerola, Lattari Mountains", fr: "Agerola, Monts Lattari", es: "Agerola, Montes Lattari" },
   "alegria.description": {
-    it: "Sospesa tra cielo e mare, Alegria offre una fuga romantica sui Monti Lattari. Vista mozzafiato sulla Costiera Amalfitana, colazioni genuine e la quiete della natura.",
-    en: "Suspended between sky and sea, Alegria offers a romantic escape in the Lattari Mountains. Breathtaking views of the Amalfi Coast, genuine breakfasts, and the tranquility of nature.",
-    fr: "Suspendue entre ciel et mer, Alegria offre une escapade romantique dans les Monts Lattari. Vue imprenable sur la Côte Amalfitaine, petits-déjeuners authentiques et la tranquillité de la nature.",
-    es: "Suspendida entre cielo y mar, Alegria ofrece una escapada romántica en los Montes Lattari. Vistas impresionantes de la Costa Amalfitana, desayunos genuinos y la tranquilidad de la naturaleza.",
+    it: "Sospesa tra cielo e mare, ALEgrìa offre una fuga romantica sui Monti Lattari. Vista mozzafiato sulla Costiera Amalfitana, colazioni genuine e la quiete della natura.",
+    en: "Suspended between sky and sea, ALEgrìa offers a romantic escape in the Lattari Mountains. Breathtaking views of the Amalfi Coast, genuine breakfasts, and the tranquility of nature.",
+    es: "Suspendida entre cielo y mar, ALEgrìa ofrece una escapada romántica en los Montes Lattari. Vistas impresionantes de la Costa Amalfitana, desayunos genuinos y la tranquilidad de la naturaleza.",
   },
 
   // Casa Momi Property
   "casamomi.name": { it: "Casa Momi Mergellina", en: "Casa Momi Mergellina", fr: "Casa Momi Mergellina", es: "Casa Momi Mergellina" },
   "casamomi.location": { it: "Napoli", en: "Naples", fr: "Naples", es: "Nápoles" },
   "casamomi.description": {
-    it: "Nel cuore pulsante di Napoli, Casa Momi è il punto di partenza ideale per esplorare la città. Eleganza contemporanea, posizione privilegiata sul lungomare di Mergellina.",
-    en: "In the vibrant heart of Naples, Casa Momi is the ideal starting point to explore the city. Contemporary elegance with a privileged position on Mergellina's waterfront.",
-    fr: "Au cœur vibrant de Naples, Casa Momi est le point de départ idéal pour explorer la ville. Élégance contemporaine avec une position privilégiée sur le front de mer de Mergellina.",
-    es: "En el vibrante corazón de Nápoles, Casa Momi es el punto de partida ideal para explorar la ciudad. Elegancia contemporánea con una posición privilegiada en el paseo marítimo de Mergellina.",
+    it: "Nel cuore pulsante di Napoli, Casa Momi è il punto di partenza ideale per esplorare la città. Eleganza contemporanea, nei pressi del lungomare di Mergellina.",
+    en: "In the vibrant heart of Naples, Casa Momi is the ideal starting point to explore the city. Contemporary elegance, near Mergellina's waterfront.",
+    fr: "Au cœur vibrant de Naples, Casa Momi est le point de départ idéal pour explorer la ville. Élégance contemporaine, à proximité du front de mer de Mergellina.",
+    es: "En el vibrante corazón de Nápoles, Casa Momi es el punto de partida ideal para explorar la ciudad. Elegancia contemporánea, cerca del paseo marítimo de Mergellina.",
   },
 
   // Why Choose Us
@@ -92,13 +91,6 @@ export const translations: Translations = {
     en: "From the Amalfi Coast to the heart of Naples — our properties are in prime locations.",
     fr: "De la Côte Amalfitaine au cœur de Naples — nos propriétés sont dans des emplacements privilégiés.",
     es: "Desde la Costa Amalfitana hasta el corazón de Nápoles — nuestras propiedades están en ubicaciones privilegiadas.",
-  },
-  "why.eco.title": { it: "Eco-Sostenibile", en: "Eco-Friendly", fr: "Éco-Responsable", es: "Eco-Sostenible" },
-  "why.eco.desc": {
-    it: "Energia rinnovabile, prodotti biologici e pratiche sostenibili per un turismo responsabile.",
-    en: "Renewable energy, organic products, and sustainable practices for responsible tourism.",
-    fr: "Énergie renouvelable, produits biologiques et pratiques durables pour un tourisme responsable.",
-    es: "Energía renovable, productos orgánicos y prácticas sostenibles para un turismo responsable.",
   },
 
   // Home CTA
@@ -138,10 +130,10 @@ export const translations: Translations = {
   "whatsapp.badge": { it: "Risparmia prenotando direttamente", en: "Save by booking directly", fr: "Économisez en réservant directement", es: "Ahorra reservando directamente" },
   "phone.cta": { it: "Chiamaci", en: "Call Us", fr: "Appelez-nous", es: "Llámanos" },
   "whatsapp.alegria.message": {
-    it: "Ciao! Ho visto Alegria - Il Nido degli Dei e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
-    en: "Hi! I saw Alegria - Il Nido degli Dei and I'd like to know more about the direct booking discount 😊",
-    fr: "Bonjour ! J'ai vu Alegria - Il Nido degli Dei et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
-    es: "¡Hola! Vi Alegria - Il Nido degli Dei y me gustaría saber más sobre el descuento por reserva directa 😊",
+    it: "Ciao! Ho visto ALEgrìa - Il Nido degli Dei e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
+    en: "Hi! I saw ALEgrìa - Il Nido degli Dei and I'd like to know more about the direct booking discount 😊",
+    fr: "Bonjour ! J'ai vu ALEgrìa - Il Nido degli Dei et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
+    es: "¡Hola! Vi ALEgrìa - Il Nido degli Dei y me gustaría saber más sobre el descuento por reserva directa 😊",
   },
   "whatsapp.casamomi.message": {
     it: "Ciao! Ho visto Casa Momi Mergellina e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
@@ -183,10 +175,10 @@ export const translations: Translations = {
     es: "Via Radicosa, 80051 Agerola (San Lazzaro), Nápoles",
   },
   "alegria.overview.text": {
-    it: "Alegria - Il Nido degli Dei è un B&B eco-sostenibile a conduzione familiare, situato nella tranquilla frazione di San Lazzaro ad Agerola. L'appartamento dispone di 2 camere da letto, soggiorno, cucina attrezzata e 2 bagni. Dalla terrazza panoramica si gode una vista mozzafiato sulla Costiera Amalfitana e il Golfo di Salerno.",
-    en: "Alegria - Il Nido degli Dei is an eco-friendly family-run B&B, located in the peaceful San Lazzaro district of Agerola. The apartment features 2 bedrooms, a living room, an equipped kitchen, and 2 bathrooms. The panoramic terrace offers breathtaking views of the Amalfi Coast and the Gulf of Salerno.",
-    fr: "Alegria - Il Nido degli Dei est un B&B éco-responsable à gestion familiale, situé dans le paisible quartier de San Lazzaro à Agerola. L'appartement dispose de 2 chambres, un séjour, une cuisine équipée et 2 salles de bain. La terrasse panoramique offre une vue imprenable sur la Côte Amalfitaine et le Golfe de Salerne.",
-    es: "Alegria - Il Nido degli Dei es un B&B eco-sostenible de gestión familiar, situado en el tranquilo barrio de San Lazzaro en Agerola. El apartamento cuenta con 2 dormitorios, sala de estar, cocina equipada y 2 baños. La terraza panorámica ofrece vistas impresionantes de la Costa Amalfitana y el Golfo de Salerno.",
+    it: "ALEgrìa - Il Nido degli Dei è un B&B a conduzione familiare, situato nella tranquilla frazione di San Lazzaro ad Agerola. L'appartamento dispone di 2 camere da letto, soggiorno con divano letto (2 posti letto aggiuntivi), cucina attrezzata e 2 bagni. Dalla terrazza panoramica si gode una vista mozzafiato sulla Costiera Amalfitana e il Golfo di Salerno.",
+    en: "ALEgrìa - Il Nido degli Dei is a family-run B&B, located in the peaceful San Lazzaro district of Agerola. The apartment features 2 bedrooms, a living room with sofa bed (2 additional sleeping spots), an equipped kitchen, and 2 bathrooms. The panoramic terrace offers breathtaking views of the Amalfi Coast and the Gulf of Salerno.",
+    fr: "ALEgrìa - Il Nido degli Dei est un B&B à gestion familiale, situé dans le paisible quartier de San Lazzaro à Agerola. L'appartement dispose de 2 chambres, un séjour avec canapé-lit (2 couchages supplémentaires), une cuisine équipée et 2 salles de bain. La terrasse panoramique offre une vue imprenable sur la Côte Amalfitaine et le Golfe de Salerne.",
+    es: "ALEgrìa - Il Nido degli Dei es un B&B de gestión familiar, situado en el tranquilo barrio de San Lazzaro en Agerola. El apartamento cuenta con 2 dormitorios, sala de estar con sofá cama (2 plazas adicionales), cocina equipada y 2 baños. La terraza panorámica ofrece vistas impresionantes de la Costa Amalfitana y el Golfo de Salerno.",
   },
   "alegria.service.terrace": { it: "Terrazza Panoramica", en: "Panoramic Terrace", fr: "Terrasse Panoramique", es: "Terraza Panorámica" },
   "alegria.service.terrace.desc": {
@@ -194,27 +186,6 @@ export const translations: Translations = {
     en: "Breathtaking views of Amalfi and the Gulf of Salerno",
     fr: "Vue imprenable sur Amalfi et le Golfe de Salerne",
     es: "Vistas impresionantes de Amalfi y el Golfo de Salerno",
-  },
-  "alegria.service.breakfast": { it: "Colazione Bio", en: "Organic Breakfast", fr: "Petit-déjeuner Bio", es: "Desayuno Orgánico" },
-  "alegria.service.breakfast.desc": {
-    it: "Buffet con ingredienti biologici e locali, frutta fresca e pasticceria",
-    en: "Buffet with organic and local ingredients, fresh fruit, and pastries",
-    fr: "Buffet avec des ingrédients biologiques et locaux, fruits frais et pâtisseries",
-    es: "Buffet con ingredientes orgánicos y locales, fruta fresca y pastelería",
-  },
-  "alegria.service.garden": { it: "Giardino e Orto", en: "Garden & Orchard", fr: "Jardin et Potager", es: "Jardín y Huerto" },
-  "alegria.service.garden.desc": {
-    it: "Ampio giardino, frutteto e orto biologico",
-    en: "Large garden, fruit trees, and organic vegetable garden",
-    fr: "Grand jardin, arbres fruitiers et potager biologique",
-    es: "Amplio jardín, árboles frutales y huerto orgánico",
-  },
-  "alegria.service.solarium": { it: "Solarium", en: "Solarium", fr: "Solarium", es: "Solárium" },
-  "alegria.service.solarium.desc": {
-    it: "Area relax con solarium e doccia esterna",
-    en: "Relaxation area with solarium and outdoor shower",
-    fr: "Espace détente avec solarium et douche extérieure",
-    es: "Zona de relax con solárium y ducha exterior",
   },
   "alegria.service.wifi": { it: "Wi-Fi Gratuito", en: "Free Wi-Fi", fr: "Wi-Fi Gratuit", es: "Wi-Fi Gratuito" },
   "alegria.service.wifi.desc": {
@@ -236,20 +207,6 @@ export const translations: Translations = {
     en: "Climate control in all rooms",
     fr: "Climatisation dans toutes les pièces",
     es: "Climatización en todas las habitaciones",
-  },
-  "alegria.service.ev": { it: "Ricarica EV", en: "EV Charging", fr: "Recharge VE", es: "Carga VE" },
-  "alegria.service.ev.desc": {
-    it: "Colonnina di ricarica per veicoli elettrici",
-    en: "Electric vehicle charging station",
-    fr: "Borne de recharge pour véhicules électriques",
-    es: "Estación de carga para vehículos eléctricos",
-  },
-  "alegria.service.eco": { it: "Eco-Sostenibile", en: "Eco-Friendly", fr: "Éco-Responsable", es: "Eco-Sostenible" },
-  "alegria.service.eco.desc": {
-    it: "Energia 100% rinnovabile, pannelli solari, prodotti eco",
-    en: "100% renewable energy, solar panels, eco products",
-    fr: "Énergie 100% renouvelable, panneaux solaires, produits éco",
-    es: "Energía 100% renovable, paneles solares, productos eco",
   },
   "alegria.nearby.sentiero": {
     it: "Sentiero degli Dei — il celebre percorso escursionistico che collega Agerola a Positano",
@@ -276,12 +233,12 @@ export const translations: Translations = {
     es: "Plaza San Lazzaro — a 5 minutos a pie",
   },
   "alegria.rules.text": {
-    it: "Check-in: flessibile | Check-out: flessibile | Animali ammessi su richiesta | Ambiente non fumatori negli interni",
-    en: "Check-in: flexible | Check-out: flexible | Pets on request | Non-smoking indoors",
-    fr: "Arrivée : flexible | Départ : flexible | Animaux sur demande | Non-fumeur à l'intérieur",
-    es: "Entrada: flexible | Salida: flexible | Mascotas bajo petición | No fumadores en interiores",
+    it: "Check-in: flessibile | Check-out: flessibile | Animali non ammessi| Ambiente non fumatori negli interni",
+    en: "Check-in: flexible | Check-out: flexible | Pets not allowed | Non-smoking indoors",
+    fr: "Arrivée : flexible | Départ : flexible | Animaux non autorisés | Non-fumeur à l'intérieur",
+    es: "Entrada: flexible | Salida: flexible | Mascotas no permitidas | No fumadores en interiores",
   },
-  "alegria.price": { it: "A partire da €90/notte", en: "From €90/night", fr: "À partir de 90€/nuit", es: "Desde 90€/noche" },
+  "alegria.price": { it: "A partire da €140/notte", en: "From €140/night", fr: "À partir de 140€/nuit", es: "Desde 140€/noche" },
   "alegria.rating": { it: "4.7/5 Eccellente", en: "4.7/5 Excellent", fr: "4.7/5 Excellent", es: "4.7/5 Excelente" },
 
   // Casa Momi Property Page
@@ -304,10 +261,10 @@ export const translations: Translations = {
     es: "Via Fedro 4, Int. 3, Piso 1, Escalera B, 80122 Nápoles",
   },
   "casamomi.overview.text": {
-    it: "Casa Momi Mergellina è un elegante appartamento vacanze situato nel cuore di Napoli. Dispone di 2 camere matrimoniali, un divano letto matrimoniale in soggiorno, 2 bagni con doccia e cucina completamente attrezzata. Lo stabile signorile con portiere garantisce sicurezza e comfort.",
-    en: "Casa Momi Mergellina is an elegant holiday apartment located in the heart of Naples. It features 2 double bedrooms, a sofa bed in the living room, 2 bathrooms with showers, and a fully equipped kitchen. The elegant building with doorman ensures security and comfort.",
-    fr: "Casa Momi Mergellina est un élégant appartement de vacances situé au cœur de Naples. Il dispose de 2 chambres doubles, un canapé-lit dans le séjour, 2 salles de bain avec douche et une cuisine entièrement équipée. L'immeuble élégant avec portier garantit sécurité et confort.",
-    es: "Casa Momi Mergellina es un elegante apartamento vacacional ubicado en el corazón de Nápoles. Cuenta con 2 dormitorios dobles, un sofá cama en la sala de estar, 2 baños con ducha y una cocina totalmente equipada. El elegante edificio con portero garantiza seguridad y confort.",
+    it: "Casa Momi Mergellina è un elegante appartamento vacanze situato nel cuore di Napoli. Dispone di 2 camere matrimoniali, un divano letto matrimoniale in soggiorno e 2 bagni con doccia. La cucina e il living sono condivisi. Lo stabile signorile con portiere garantisce sicurezza e comfort.",
+    en: "Casa Momi Mergellina is an elegant holiday apartment located in the heart of Naples. It features 2 double bedrooms, a sofa bed in the living room, and 2 bathrooms with showers. The kitchen and living area are shared. The elegant building with doorman ensures security and comfort.",
+    fr: "Casa Momi Mergellina est un élégant appartement de vacances situé au cœur de Naples. Il dispose de 2 chambres doubles, un canapé-lit dans le séjour et 2 salles de bain avec douche. La cuisine et le salon sont partagés. L'immeuble élégant avec portier garantit sécurité et confort.",
+    es: "Casa Momi Mergellina es un elegante apartamento vacacional ubicado en el corazón de Nápoles. Cuenta con 2 dormitorios dobles, un sofá cama en la sala de estar y 2 baños con ducha. La cocina y el salón son compartidos. El elegante edificio con portero garantiza seguridad y confort.",
   },
   "casamomi.service.wifi": { it: "Wi-Fi Gratuito", en: "Free Wi-Fi", fr: "Wi-Fi Gratuit", es: "Wi-Fi Gratuito" },
   "casamomi.service.wifi.desc": {
@@ -373,10 +330,10 @@ export const translations: Translations = {
     es: "Servicio de alquiler de bicicletas y coches",
   },
   "casamomi.nearby.mergellina": {
-    it: "Stazione Mergellina — a soli 250 metri, metro e treni per tutta la città",
-    en: "Mergellina Station — just 250 meters away, metro and trains across the city",
-    fr: "Gare de Mergellina — à seulement 250 mètres, métro et trains pour toute la ville",
-    es: "Estación Mergellina — a solo 250 metros, metro y trenes por toda la ciudad",
+    it: "Stazione metro — a soli 100 metri, collegamento con tutta la città",
+    en: "Metro station — just 100 meters away, connected to the whole city",
+    fr: "Station de métro — à seulement 100 mètres, connexion avec toute la ville",
+    es: "Estación de metro — a solo 100 metros, conexión con toda la ciudad",
   },
   "casamomi.nearby.lungomare": {
     it: "Lungomare Caracciolo — a 350 metri, la passeggiata più bella di Napoli",
@@ -408,7 +365,7 @@ export const translations: Translations = {
   "casamomi.rules.nopets": { it: "Animali non ammessi", en: "No pets", fr: "Animaux non admis", es: "No se admiten mascotas" },
   "casamomi.rules.noparty": { it: "Non sono ammesse feste", en: "No parties", fr: "Fêtes non autorisées", es: "No se permiten fiestas" },
   "casamomi.rules.age": { it: "Età minima check-in: 18 anni", en: "Minimum check-in age: 18", fr: "Âge minimum pour l'arrivée : 18 ans", es: "Edad mínima de entrada: 18 años" },
-  "casamomi.price": { it: "A partire da €140/notte", en: "From €140/night", fr: "À partir de 140€/nuit", es: "Desde 140€/noche" },
+  "casamomi.price": { it: "A partire da €120/notte", en: "From €120/night", fr: "À partir de 120€/nuit", es: "Desde 120€/noche" },
   "casamomi.rating": { it: "9.2/10 Eccellente", en: "9.2/10 Excellent", fr: "9.2/10 Excellent", es: "9.2/10 Excelente" },
 
   // Admin Login (IT/EN only)

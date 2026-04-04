@@ -36,7 +36,7 @@ function AdminContent() {
   };
 
   const properties: { id: PropertyId; name: string; location: string }[] = [
-    { id: "alegria", name: "Alegria — Nido degli Dei", location: "Agerola" },
+    { id: "alegria", name: "ALEgrìa — Nido degli Dei", location: "Agerola" },
     { id: "casamomi", name: "Casa Momi Mergellina", location: "Napoli" },
   ];
 

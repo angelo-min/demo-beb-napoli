@@ -19,7 +19,7 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Dimore Mediterranee | Authentic Southern Italian Hospitality",
   description:
-    "Experience the warmth of Southern Italy at our boutique B&Bs in Campania. Alegria in the Lattari Mountains and Casa Momi in the heart of Naples.",
+    "Experience the warmth of Southern Italy at our boutique B&Bs in Campania. ALEgrìa in the Lattari Mountains and Casa Momi in the heart of Naples.",
   generator: "v0.app",
   icons: {
     icon: [
