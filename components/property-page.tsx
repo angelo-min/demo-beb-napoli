@@ -25,16 +25,15 @@ import {
   Star,
   Clock,
   ArrowLeft,
-  ExternalLink,
   Instagram,
   Mail,
-  MessageCircle,
-  Phone,
   ChevronLeft,
   ChevronRight,
   X,
   type LucideIcon,
 } from "lucide-react";
+import { BookingSection } from "@/components/public/booking-section";
+import type { Room } from "@/lib/booking-store";
 
 const iconMap: Record<string, LucideIcon> = {
   mountain: Mountain,
@@ -87,6 +86,7 @@ export interface PropertyConfig {
   services: ServiceConfig[];
   nearbyKeys: string[];
   rules: FlexibleRules | StructuredRules;
+  rooms?: Room[];
 }
 
 export function PropertyPage({ config }: { config: PropertyConfig }) {
@@ -167,51 +167,18 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
               <span className="text-sm font-medium text-foreground">{t(config.priceKey)}</span>
             </div>
 
-            {/* Primary CTA — WhatsApp & Call */}
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            {/* Primary CTA — Book Now */}
+            <div className="mt-10">
               <a
-                href={`https://wa.me/393382266190?text=${encodeURIComponent(t(`whatsapp.${config.id}.message`))}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-[#1fb855]"
+                href="#booking"
+                className="inline-flex items-center gap-2 rounded-sm bg-primary px-10 py-3.5 text-sm font-medium uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                <MessageCircle className="h-4 w-4" />
-                <span>{t("whatsapp.cta")}</span>
-              </a>
-              <a
-                href="tel:+393382266190"
-                className="inline-flex items-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-medium uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <Phone className="h-4 w-4" />
-                <span>{t("phone.cta")}</span>
+                <span>{t("property.book")}</span>
               </a>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
               {t("whatsapp.badge")}
             </p>
-
-            {/* Secondary CTA — Booking platforms */}
-            <div className="mt-6 flex items-center justify-center gap-4">
-              <a
-                href={config.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <span>Booking.com</span>
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-              <span className="text-border">|</span>
-              <a
-                href={config.airbnbUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <span>Airbnb</span>
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            </div>
 
             <div className="mt-12 md:mt-16">
               <a
@@ -453,74 +420,13 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
           </div>
         </section>
 
-        {/* Book Now CTA */}
-        <section className="px-6 py-20 md:px-8 md:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-serif text-3xl font-medium text-foreground md:text-4xl lg:text-5xl">
-              {t("property.book")}
-            </h2>
-            <div className="mx-auto mt-4 h-px w-16 bg-primary/40" />
-            <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              {t(config.heroDescriptionKey)}
-            </p>
-
-            {/* Primary CTA — WhatsApp & Call */}
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a
-                href={`https://wa.me/393382266190?text=${encodeURIComponent(t(`whatsapp.${config.id}.message`))}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-[#1fb855]"
-              >
-                <MessageCircle className="h-4 w-4" />
-                <span>{t("whatsapp.cta")}</span>
-              </a>
-              <a
-                href="tel:+393382266190"
-                className="inline-flex items-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-medium uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                <Phone className="h-4 w-4" />
-                <span>{t("phone.cta")}</span>
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-muted-foreground">
-              {t("whatsapp.label")}
-            </p>
-
-            {/* Secondary — Booking platforms */}
-            <div className="mt-6 flex items-center justify-center gap-4">
-              <a
-                href={config.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <span>Booking.com</span>
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-              <span className="text-border">|</span>
-              <a
-                href={config.airbnbUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <span>Airbnb</span>
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            </div>
-
-            <div className="mt-8">
-              <a
-                href="mailto:info@dimoremediterranee.it"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Mail className="h-4 w-4" />
-                <span>info@dimoremediterranee.it</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* Booking Section */}
+        <BookingSection
+          propertyId={config.id as "alegria" | "casamomi"}
+          rooms={config.rooms}
+          bookingUrl={config.bookingUrl}
+          airbnbUrl={config.airbnbUrl}
+        />
       </main>
 
       {/* Footer */}

@@ -2,6 +2,7 @@
 
 import { LanguageProvider } from "@/lib/i18n";
 import { PropertyPage } from "@/components/property-page";
+import type { Room } from "@/lib/booking-store";
 
 const casamomiConfig = {
   id: "casamomi",
@@ -108,6 +109,7 @@ const casamomiConfig = {
       "casamomi.rules.age",
     ],
   },
+  rooms: ["gold", "silver", "whole"] as Room[],
 };
 
 export default function CasaMomiPage() {

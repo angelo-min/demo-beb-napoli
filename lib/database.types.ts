@@ -63,6 +63,90 @@ export interface Database {
         };
         Relationships: [];
       };
+      pricing: {
+        Row: {
+          id: string;
+          property_id: "alegria" | "casamomi";
+          room: "gold" | "silver" | "whole" | null;
+          season_name: string;
+          start_date: string;
+          end_date: string;
+          price_per_night: number;
+          min_nights: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          property_id: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          season_name: string;
+          start_date: string;
+          end_date: string;
+          price_per_night: number;
+          min_nights?: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          property_id?: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          season_name?: string;
+          start_date?: string;
+          end_date?: string;
+          price_per_night?: number;
+          min_nights?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      booking_requests: {
+        Row: {
+          id: string;
+          property_id: "alegria" | "casamomi";
+          room: "gold" | "silver" | "whole" | null;
+          guest_name: string;
+          guest_email: string;
+          guest_phone: string;
+          check_in: string;
+          check_out: string;
+          guests_count: number;
+          notes: string;
+          total_price: number | null;
+          status: "pending" | "confirmed" | "rejected";
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          property_id: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          guest_name: string;
+          guest_email: string;
+          guest_phone: string;
+          check_in: string;
+          check_out: string;
+          guests_count?: number;
+          notes?: string;
+          total_price?: number | null;
+          status?: "pending" | "confirmed" | "rejected";
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          property_id?: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          guest_name?: string;
+          guest_email?: string;
+          guest_phone?: string;
+          check_in?: string;
+          check_out?: string;
+          guests_count?: number;
+          notes?: string;
+          total_price?: number | null;
+          status?: "pending" | "confirmed" | "rejected";
+          created_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;

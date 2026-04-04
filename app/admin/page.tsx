@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Plus, Home, LogOut } from "lucide-react";
+import { Plus, Home, LogOut, CalendarDays, Inbox, Euro } from "lucide-react";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth-store";
 import { useBookingStore, type Room, type Booking } from "@/lib/booking-store";
@@ -10,6 +10,8 @@ import { AuthGuard } from "@/components/admin/auth-guard";
 import { AvailabilityCalendar } from "@/components/admin/availability-calendar";
 import { BookingList } from "@/components/admin/booking-list";
 import { BookingModal } from "@/components/admin/booking-modal";
+import { BookingRequests } from "@/components/admin/booking-requests";
+import { PricingManager } from "@/components/admin/pricing-manager";
 import { Button } from "@/components/ui/button";
 
 type PropertyId = "alegria" | "casamomi";
@@ -21,6 +23,7 @@ function AdminContent() {
 
   const [activeProperty, setActiveProperty] = useState<PropertyId>("alegria");
   const [activeRoom, setActiveRoom] = useState<Room | null>(null);
+  const [activeTab, setActiveTab] = useState<"bookings" | "requests" | "pricing">("bookings");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
 
@@ -133,44 +136,97 @@ function AdminContent() {
         </div>
       )}
 
-      {/* Main Content */}
-      <main className="mx-auto max-w-6xl px-4 py-6 md:px-6 md:py-8">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-          {/* Calendar Section */}
-          <div>
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-serif text-lg font-medium text-foreground">
-                {t("admin.calendar")}
-              </h2>
-            </div>
-            <AvailabilityCalendar propertyId={activeProperty} room={activeRoom} />
-          </div>
-
-          {/* Bookings Section */}
-          <div>
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-serif text-lg font-medium text-foreground">
-                {t("admin.upcoming")}
-              </h2>
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                size="sm"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+      {/* Section Tabs */}
+      <div className="border-b border-border bg-background">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="flex gap-1">
+            {([
+              { id: "bookings" as const, icon: CalendarDays, label: t("admin.bookings") },
+              { id: "requests" as const, icon: Inbox, label: t("admin.requests") },
+              { id: "pricing" as const, icon: Euro, label: t("admin.pricing") },
+            ]).map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-colors md:px-5 md:py-3 ${
+                  activeTab === tab.id
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
-                <Plus className="mr-1 h-4 w-4" />
-                {t("admin.add")}
-              </Button>
-            </div>
-            <BookingList
-              propertyId={activeProperty}
-              room={activeRoom}
-              onEdit={(booking) => {
-                setEditingBooking(booking);
-                setIsModalOpen(true);
-              }}
-            />
+                <tab.icon className="h-4 w-4" />
+                {tab.label}
+                {activeTab === tab.id && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+                )}
+              </button>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="mx-auto max-w-6xl px-4 py-6 md:px-6 md:py-8">
+        {activeTab === "bookings" && (
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+            {/* Calendar Section */}
+            <div>
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="font-serif text-lg font-medium text-foreground">
+                  {t("admin.calendar")}
+                </h2>
+              </div>
+              <AvailabilityCalendar propertyId={activeProperty} room={activeRoom} />
+            </div>
+
+            {/* Bookings Section */}
+            <div>
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="font-serif text-lg font-medium text-foreground">
+                  {t("admin.upcoming")}
+                </h2>
+                <Button
+                  onClick={() => setIsModalOpen(true)}
+                  size="sm"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  <Plus className="mr-1 h-4 w-4" />
+                  {t("admin.add")}
+                </Button>
+              </div>
+              <BookingList
+                propertyId={activeProperty}
+                room={activeRoom}
+                onEdit={(booking) => {
+                  setEditingBooking(booking);
+                  setIsModalOpen(true);
+                }}
+              />
+            </div>
+          </div>
+        )}
+
+        {activeTab === "requests" && (
+          <div>
+            <div className="mb-4">
+              <h2 className="font-serif text-lg font-medium text-foreground">
+                {t("admin.requests.title")}
+              </h2>
+            </div>
+            <BookingRequests propertyId={activeProperty} />
+          </div>
+        )}
+
+        {activeTab === "pricing" && (
+          <div>
+            <div className="mb-4">
+              <h2 className="font-serif text-lg font-medium text-foreground">
+                {t("admin.pricing.title")}
+              </h2>
+            </div>
+            <PricingManager propertyId={activeProperty} room={activeRoom} />
+          </div>
+        )}
       </main>
 
       {/* Booking Modal */}
