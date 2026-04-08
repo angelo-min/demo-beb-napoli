@@ -9,15 +9,15 @@ const properties = [
     nameKey: "alegria.name",
     locationKey: "alegria.location",
     descriptionKey: "alegria.description",
-    href: "/alegria",
-    coverImage: "/alegria/049031C9-C0B7-4499-8196-9EE80FC2F19B.JPG",
+    href: "/villa-serena",
+    coverImage: "/sebastian-leonhardt-PkWac9CLWVA-unsplash.jpg",
   },
   {
     nameKey: "casamomi.name",
     locationKey: "casamomi.location",
     descriptionKey: "casamomi.description",
-    href: "/casamomi",
-    coverImage: "/casa-momi/232F863B-66EB-49FB-B525-57EE967BEA79.JPG",
+    href: "/casa-blu",
+    coverImage: "/casa-blu/01-living.jpg",
   },
 ];
 

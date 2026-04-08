@@ -28,10 +28,10 @@ export const translations: Translations = {
 
   // Hero Section
   "hero.tagline": {
-    it: "Dimore Mediterranee",
-    en: "Dimore Mediterranee",
-    fr: "Dimore Mediterranee",
-    es: "Dimore Mediterranee",
+    it: "B&B Demo Napoli",
+    en: "B&B Demo Napoli",
+    fr: "B&B Demo Napoli",
+    es: "B&B Demo Napoli",
   },
   "hero.subtitle": {
     it: "Ospitalità Autentica nel Sud Italia",
@@ -51,22 +51,23 @@ export const translations: Translations = {
   "properties.cta": { it: "Scopri", en: "Discover", fr: "Découvrir", es: "Descubrir" },
 
   // Alegria Property
-  "alegria.name": { it: "ALEgrìa — Nido degli Dei", en: "ALEgrìa — Nido degli Dei", fr: "ALEgrìa — Nido degli Dei", es: "ALEgrìa — Nido degli Dei" },
-  "alegria.location": { it: "Agerola, Monti Lattari", en: "Agerola, Lattari Mountains", fr: "Agerola, Monts Lattari", es: "Agerola, Montes Lattari" },
+  "alegria.name": { it: "Villa Serena", en: "Villa Serena", fr: "Villa Serena", es: "Villa Serena" },
+  "alegria.location": { it: "Costiera Amalfitana", en: "Amalfi Coast", fr: "Côte Amalfitaine", es: "Costa Amalfitana" },
   "alegria.description": {
-    it: "Sospesa tra cielo e mare, ALEgrìa offre una fuga romantica sui Monti Lattari. Vista mozzafiato sulla Costiera Amalfitana, colazioni genuine e la quiete della natura.",
-    en: "Suspended between sky and sea, ALEgrìa offers a romantic escape in the Lattari Mountains. Breathtaking views of the Amalfi Coast, genuine breakfasts, and the tranquility of nature.",
-    es: "Suspendida entre cielo y mar, ALEgrìa ofrece una escapada romántica en los Montes Lattari. Vistas impresionantes de la Costa Amalfitana, desayunos genuinos y la tranquilidad de la naturaleza.",
+    it: "Sospesa tra cielo e mare, Villa Serena offre una fuga romantica sulla Costiera Amalfitana. Vista mozzafiato sul golfo, colazioni genuine e la quiete della natura.",
+    en: "Suspended between sky and sea, Villa Serena offers a romantic escape on the Amalfi Coast. Breathtaking views of the gulf, genuine breakfasts, and the tranquility of nature.",
+    fr: "Suspendue entre ciel et mer, Villa Serena offre une escapade romantique sur la Côte Amalfitaine. Vues imprenables sur le golfe, petits-déjeuners maison et tranquillité de la nature.",
+    es: "Suspendida entre cielo y mar, Villa Serena ofrece una escapada romántica en la Costa Amalfitana. Vistas impresionantes del golfo, desayunos genuinos y la tranquilidad de la naturaleza.",
   },
 
   // Casa Momi Property
-  "casamomi.name": { it: "Casa Momi Mergellina", en: "Casa Momi Mergellina", fr: "Casa Momi Mergellina", es: "Casa Momi Mergellina" },
-  "casamomi.location": { it: "Napoli", en: "Naples", fr: "Naples", es: "Nápoles" },
+  "casamomi.name": { it: "Casa Blu", en: "Casa Blu", fr: "Casa Blu", es: "Casa Blu" },
+  "casamomi.location": { it: "Napoli, Lungomare", en: "Naples, Seafront", fr: "Naples, Front de mer", es: "Nápoles, Paseo Marítimo" },
   "casamomi.description": {
-    it: "Nel cuore pulsante di Napoli, Casa Momi è il punto di partenza ideale per esplorare la città. Eleganza contemporanea, nei pressi del lungomare di Mergellina.",
-    en: "In the vibrant heart of Naples, Casa Momi is the ideal starting point to explore the city. Contemporary elegance, near Mergellina's waterfront.",
-    fr: "Au cœur vibrant de Naples, Casa Momi est le point de départ idéal pour explorer la ville. Élégance contemporaine, à proximité du front de mer de Mergellina.",
-    es: "En el vibrante corazón de Nápoles, Casa Momi es el punto de partida ideal para explorar la ciudad. Elegancia contemporánea, cerca del paseo marítimo de Mergellina.",
+    it: "Nel cuore pulsante di Napoli, Casa Blu è il punto di partenza ideale per esplorare la città. Eleganza contemporanea, a due passi dal lungomare.",
+    en: "In the vibrant heart of Naples, Casa Blu is the ideal starting point to explore the city. Contemporary elegance, steps from the seafront promenade.",
+    fr: "Au cœur vibrant de Naples, Casa Blu est le point de départ idéal pour explorer la ville. Élégance contemporaine, à deux pas du front de mer.",
+    es: "En el vibrante corazón de Nápoles, Casa Blu es el punto de partida ideal para explorar la ciudad. Elegancia contemporánea, a pasos del paseo marítimo.",
   },
 
   // Why Choose Us
@@ -93,6 +94,13 @@ export const translations: Translations = {
     fr: "De la Côte Amalfitaine au cœur de Naples — nos propriétés sont dans des emplacements privilégiés.",
     es: "Desde la Costa Amalfitana hasta el corazón de Nápoles — nuestras propiedades están en ubicaciones privilegiadas.",
   },
+  "why.eco.title": { it: "Rispetto per l'Ambiente", en: "Eco Friendly", fr: "Respect de l'Environnement", es: "Respeto al Medio Ambiente" },
+  "why.eco.desc": {
+    it: "Scelte sostenibili nella gestione quotidiana: prodotti locali, riduzione degli sprechi e attenzione al territorio.",
+    en: "Sustainable choices in daily management: local products, waste reduction, and care for the environment.",
+    fr: "Des choix durables au quotidien : produits locaux, réduction des déchets et respect du territoire.",
+    es: "Elecciones sostenibles en la gestión diaria: productos locales, reducción de residuos y respeto al entorno.",
+  },
 
   // Home CTA
   "home.cta.title": { it: "Prenota la Tua Esperienza", en: "Book Your Experience", fr: "Réservez Votre Expérience", es: "Reserva Tu Experiencia" },
@@ -104,7 +112,7 @@ export const translations: Translations = {
   },
 
   // Footer
-  "footer.brand": { it: "Dimore Mediterranee", en: "Dimore Mediterranee", fr: "Dimore Mediterranee", es: "Dimore Mediterranee" },
+  "footer.brand": { it: "B&B Demo Napoli", en: "B&B Demo Napoli", fr: "B&B Demo Napoli", es: "B&B Demo Napoli" },
   "footer.tagline": {
     it: "Ospitalità autentica nel Sud Italia",
     en: "Authentic hospitality in Southern Italy",
@@ -131,16 +139,16 @@ export const translations: Translations = {
   "whatsapp.badge": { it: "Risparmia prenotando direttamente", en: "Save by booking directly", fr: "Économisez en réservant directement", es: "Ahorra reservando directamente" },
   "phone.cta": { it: "Chiamaci", en: "Call Us", fr: "Appelez-nous", es: "Llámanos" },
   "whatsapp.alegria.message": {
-    it: "Ciao! Ho visto ALEgrìa - Il Nido degli Dei e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
-    en: "Hi! I saw ALEgrìa - Il Nido degli Dei and I'd like to know more about the direct booking discount 😊",
-    fr: "Bonjour ! J'ai vu ALEgrìa - Il Nido degli Dei et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
-    es: "¡Hola! Vi ALEgrìa - Il Nido degli Dei y me gustaría saber más sobre el descuento por reserva directa 😊",
+    it: "Ciao! Ho visto Villa Serena e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
+    en: "Hi! I saw Villa Serena and I'd like to know more about the direct booking discount 😊",
+    fr: "Bonjour ! J'ai vu Villa Serena et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
+    es: "¡Hola! Vi Villa Serena y me gustaría saber más sobre el descuento por reserva directa 😊",
   },
   "whatsapp.casamomi.message": {
-    it: "Ciao! Ho visto Casa Momi Mergellina e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
-    en: "Hi! I saw Casa Momi Mergellina and I'd like to know more about the direct booking discount 😊",
-    fr: "Bonjour ! J'ai vu Casa Momi Mergellina et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
-    es: "¡Hola! Vi Casa Momi Mergellina y me gustaría saber más sobre el descuento por reserva directa 😊",
+    it: "Ciao! Ho visto Casa Blu e vorrei sapere di più sullo sconto per la prenotazione diretta 😊",
+    en: "Hi! I saw Casa Blu and I'd like to know more about the direct booking discount 😊",
+    fr: "Bonjour ! J'ai vu Casa Blu et j'aimerais en savoir plus sur la réduction pour réservation directe 😊",
+    es: "¡Hola! Vi Casa Blu y me gustaría saber más sobre el descuento por reserva directa 😊",
   },
 
   // Property Page Common
@@ -151,35 +159,35 @@ export const translations: Translations = {
   "property.checkout": { it: "Check-out", en: "Check-out", fr: "Départ", es: "Salida" },
   "property.contact": { it: "Contattaci", en: "Contact Us", fr: "Contactez-nous", es: "Contáctanos" },
   "property.book": { it: "Prenota Ora", en: "Book Now", fr: "Réserver Maintenant", es: "Reservar Ahora" },
-  "property.backHome": { it: "Dimore Mediterranee", en: "Dimore Mediterranee", fr: "Dimore Mediterranee", es: "Dimore Mediterranee" },
+  "property.backHome": { it: "B&B Demo Napoli", en: "B&B Demo Napoli", fr: "B&B Demo Napoli", es: "B&B Demo Napoli" },
   "property.nearby": { it: "Nei Dintorni", en: "Nearby", fr: "À Proximité", es: "Alrededores" },
   "property.gallery": { it: "Galleria", en: "Gallery", fr: "Galerie", es: "Galería" },
   "property.overview": { it: "Panoramica", en: "Overview", fr: "Aperçu", es: "Descripción" },
 
   // Alegria Property Page
   "alegria.hero.subtitle": {
-    it: "Agerola, Costiera Amalfitana",
-    en: "Agerola, Amalfi Coast",
-    fr: "Agerola, Côte Amalfitaine",
-    es: "Agerola, Costa Amalfitana",
+    it: "Costiera Amalfitana",
+    en: "Amalfi Coast",
+    fr: "Côte Amalfitaine",
+    es: "Costa Amalfitana",
   },
   "alegria.hero.description": {
-    it: "Un rifugio paradisiaco dove il cielo e il mare si fondono, un balcone privato sulla Costiera Amalfitana immerso nella tranquillità dei Monti Lattari.",
-    en: "A heavenly retreat where sky and sea merge, a private balcony over the Amalfi Coast immersed in the tranquility of the Lattari Mountains.",
-    fr: "Un refuge paradisiaque où le ciel et la mer se confondent, un balcon privé sur la Côte Amalfitaine immergé dans la tranquillité des Monts Lattari.",
-    es: "Un refugio paradisíaco donde el cielo y el mar se funden, un balcón privado sobre la Costa Amalfitana inmerso en la tranquilidad de los Montes Lattari.",
+    it: "Un rifugio paradisiaco dove il cielo e il mare si fondono, un balcone privato sulla Costiera Amalfitana immerso nella tranquillità della natura.",
+    en: "A heavenly retreat where sky and sea merge, a private balcony over the Amalfi Coast immersed in the tranquility of nature.",
+    fr: "Un refuge paradisiaque où le ciel et la mer se confondent, un balcon privé sur la Côte Amalfitaine immergé dans la tranquillité de la nature.",
+    es: "Un refugio paradisíaco donde el cielo y el mar se funden, un balcón privado sobre la Costa Amalfitana inmerso en la tranquilidad de la naturaleza.",
   },
   "alegria.address": {
-    it: "Via Radicosa, 80051 Agerola (San Lazzaro), Napoli",
-    en: "Via Radicosa, 80051 Agerola (San Lazzaro), Naples",
-    fr: "Via Radicosa, 80051 Agerola (San Lazzaro), Naples",
-    es: "Via Radicosa, 80051 Agerola (San Lazzaro), Nápoles",
+    it: "Costiera Amalfitana, Napoli",
+    en: "Amalfi Coast, Naples",
+    fr: "Côte Amalfitaine, Naples",
+    es: "Costa Amalfitana, Nápoles",
   },
   "alegria.overview.text": {
-    it: "ALEgrìa - Il Nido degli Dei è un B&B a conduzione familiare, situato nella tranquilla frazione di San Lazzaro ad Agerola. L'appartamento dispone di 2 camere da letto, soggiorno con divano letto (2 posti letto aggiuntivi), cucina attrezzata e 2 bagni. Dalla terrazza panoramica si gode una vista mozzafiato sulla Costiera Amalfitana e il Golfo di Salerno.",
-    en: "ALEgrìa - Il Nido degli Dei is a family-run B&B, located in the peaceful San Lazzaro district of Agerola. The apartment features 2 bedrooms, a living room with sofa bed (2 additional sleeping spots), an equipped kitchen, and 2 bathrooms. The panoramic terrace offers breathtaking views of the Amalfi Coast and the Gulf of Salerno.",
-    fr: "ALEgrìa - Il Nido degli Dei est un B&B à gestion familiale, situé dans le paisible quartier de San Lazzaro à Agerola. L'appartement dispose de 2 chambres, un séjour avec canapé-lit (2 couchages supplémentaires), une cuisine équipée et 2 salles de bain. La terrasse panoramique offre une vue imprenable sur la Côte Amalfitaine et le Golfe de Salerne.",
-    es: "ALEgrìa - Il Nido degli Dei es un B&B de gestión familiar, situado en el tranquilo barrio de San Lazzaro en Agerola. El apartamento cuenta con 2 dormitorios, sala de estar con sofá cama (2 plazas adicionales), cocina equipada y 2 baños. La terraza panorámica ofrece vistas impresionantes de la Costa Amalfitana y el Golfo de Salerno.",
+    it: "Villa Serena è un B&B a conduzione familiare, situato in una posizione panoramica sulla Costiera Amalfitana. L'appartamento dispone di 2 camere da letto, soggiorno con divano letto (2 posti letto aggiuntivi), cucina attrezzata e 2 bagni. Dalla terrazza panoramica si gode una vista mozzafiato sul mare e il Golfo di Salerno.",
+    en: "Villa Serena is a family-run B&B, located in a panoramic position on the Amalfi Coast. The apartment features 2 bedrooms, a living room with sofa bed (2 additional sleeping spots), an equipped kitchen, and 2 bathrooms. The panoramic terrace offers breathtaking views of the sea and the Gulf of Salerno.",
+    fr: "Villa Serena est un B&B à gestion familiale, situé dans une position panoramique sur la Côte Amalfitaine. L'appartement dispose de 2 chambres, un séjour avec canapé-lit (2 couchages supplémentaires), une cuisine équipée et 2 salles de bain. La terrasse panoramique offre une vue imprenable sur la mer et le Golfe de Salerne.",
+    es: "Villa Serena es un B&B de gestión familiar, situado en una posición panorámica en la Costa Amalfitana. El apartamento cuenta con 2 dormitorios, sala de estar con sofá cama (2 plazas adicionales), cocina equipada y 2 baños. La terraza panorámica ofrece vistas impresionantes del mar y el Golfo de Salerno.",
   },
   "alegria.service.terrace": { it: "Terrazza Panoramica", en: "Panoramic Terrace", fr: "Terrasse Panoramique", es: "Terraza Panorámica" },
   "alegria.service.terrace.desc": {
@@ -210,10 +218,10 @@ export const translations: Translations = {
     es: "Climatización en todas las habitaciones",
   },
   "alegria.nearby.sentiero": {
-    it: "Sentiero degli Dei — il celebre percorso escursionistico che collega Agerola a Positano",
-    en: "Path of the Gods — the famous hiking trail connecting Agerola to Positano",
-    fr: "Sentier des Dieux — le célèbre sentier de randonnée reliant Agerola à Positano",
-    es: "Sendero de los Dioses — la famosa ruta de senderismo que conecta Agerola con Positano",
+    it: "Sentiero degli Dei — il celebre percorso escursionistico lungo la Costiera Amalfitana",
+    en: "Path of the Gods — the famous hiking trail along the Amalfi Coast",
+    fr: "Sentier des Dieux — le célèbre sentier de randonnée le long de la Côte Amalfitaine",
+    es: "Sendero de los Dioses — la famosa ruta de senderismo a lo largo de la Costa Amalfitana",
   },
   "alegria.nearby.amalfi": {
     it: "Costiera Amalfitana — Amalfi, Positano e Ravello a breve distanza",
@@ -228,10 +236,10 @@ export const translations: Translations = {
     es: "Conca dei Marini — bahía encantadora fácilmente accesible",
   },
   "alegria.nearby.piazza": {
-    it: "Piazza di San Lazzaro — a 5 minuti a piedi",
-    en: "San Lazzaro Square — 5 minutes on foot",
-    fr: "Place San Lazzaro — à 5 minutes à pied",
-    es: "Plaza San Lazzaro — a 5 minutos a pie",
+    it: "Piazza del Paese — a 5 minuti a piedi",
+    en: "Village Square — 5 minutes on foot",
+    fr: "Place du Village — à 5 minutes à pied",
+    es: "Plaza del Pueblo — a 5 minutos a pie",
   },
   "alegria.rules.text": {
     it: "Check-in: flessibile | Check-out: flessibile | Animali non ammessi| Ambiente non fumatori negli interni",
@@ -244,28 +252,28 @@ export const translations: Translations = {
 
   // Casa Momi Property Page
   "casamomi.hero.subtitle": {
-    it: "Mergellina, Napoli",
-    en: "Mergellina, Naples",
-    fr: "Mergellina, Naples",
-    es: "Mergellina, Nápoles",
+    it: "Napoli, Lungomare",
+    en: "Naples, Seafront",
+    fr: "Naples, Front de mer",
+    es: "Nápoles, Paseo Marítimo",
   },
   "casamomi.hero.description": {
-    it: "Centralissima e confortevole, nel cuore del quartiere di Mergellina, in stabile signorile con portiere. Il punto di partenza ideale per esplorare Napoli.",
-    en: "Centrally located and comfortable, in the heart of the Mergellina district, in an elegant building with doorman. The ideal starting point to explore Naples.",
-    fr: "Idéalement situé et confortable, au cœur du quartier de Mergellina, dans un immeuble élégant avec portier. Le point de départ idéal pour explorer Naples.",
-    es: "Ubicación céntrica y cómoda, en el corazón del barrio de Mergellina, en un elegante edificio con portero. El punto de partida ideal para explorar Nápoles.",
+    it: "Centralissima e confortevole, nel cuore di Napoli, in stabile signorile con portiere. Il punto di partenza ideale per esplorare la città.",
+    en: "Centrally located and comfortable, in the heart of Naples, in an elegant building with doorman. The ideal starting point to explore the city.",
+    fr: "Idéalement situé et confortable, au cœur de Naples, dans un immeuble élégant avec portier. Le point de départ idéal pour explorer la ville.",
+    es: "Ubicación céntrica y cómoda, en el corazón de Nápoles, en un elegante edificio con portero. El punto de partida ideal para explorar la ciudad.",
   },
   "casamomi.address": {
-    it: "Via Fedro 4, Int. 3, Piano 1, Scala B, 80122 Napoli",
-    en: "Via Fedro 4, Int. 3, Floor 1, Staircase B, 80122 Naples",
-    fr: "Via Fedro 4, Int. 3, Étage 1, Escalier B, 80122 Naples",
-    es: "Via Fedro 4, Int. 3, Piso 1, Escalera B, 80122 Nápoles",
+    it: "Napoli, Lungomare, 80122",
+    en: "Naples, Seafront, 80122",
+    fr: "Naples, Front de mer, 80122",
+    es: "Nápoles, Paseo Marítimo, 80122",
   },
   "casamomi.overview.text": {
-    it: "Casa Momi Mergellina è un elegante appartamento vacanze situato nel cuore di Napoli. Dispone di 2 camere matrimoniali, un divano letto matrimoniale in soggiorno e 2 bagni con doccia. La cucina e il living sono condivisi. Lo stabile signorile con portiere garantisce sicurezza e comfort.",
-    en: "Casa Momi Mergellina is an elegant holiday apartment located in the heart of Naples. It features 2 double bedrooms, a sofa bed in the living room, and 2 bathrooms with showers. The kitchen and living area are shared. The elegant building with doorman ensures security and comfort.",
-    fr: "Casa Momi Mergellina est un élégant appartement de vacances situé au cœur de Naples. Il dispose de 2 chambres doubles, un canapé-lit dans le séjour et 2 salles de bain avec douche. La cuisine et le salon sont partagés. L'immeuble élégant avec portier garantit sécurité et confort.",
-    es: "Casa Momi Mergellina es un elegante apartamento vacacional ubicado en el corazón de Nápoles. Cuenta con 2 dormitorios dobles, un sofá cama en la sala de estar y 2 baños con ducha. La cocina y el salón son compartidos. El elegante edificio con portero garantiza seguridad y confort.",
+    it: "Casa Blu è un elegante appartamento vacanze situato nel cuore di Napoli, a pochi passi dal lungomare. Dispone di 2 camere matrimoniali, un divano letto matrimoniale in soggiorno e 2 bagni con doccia. La cucina e il living sono condivisi. Lo stabile signorile con portiere garantisce sicurezza e comfort.",
+    en: "Casa Blu is an elegant holiday apartment located in the heart of Naples, steps from the seafront. It features 2 double bedrooms, a sofa bed in the living room, and 2 bathrooms with showers. The kitchen and living area are shared. The elegant building with doorman ensures security and comfort.",
+    fr: "Casa Blu est un élégant appartement de vacances situé au cœur de Naples, à deux pas du front de mer. Il dispose de 2 chambres doubles, un canapé-lit dans le séjour et 2 salles de bain avec douche. La cuisine et le salon sont partagés. L'immeuble élégant avec portier garantit sécurité et confort.",
+    es: "Casa Blu es un elegante apartamento vacacional ubicado en el corazón de Nápoles, a pasos del paseo marítimo. Cuenta con 2 dormitorios dobles, un sofá cama en la sala de estar y 2 baños con ducha. La cocina y el salón son compartidos. El elegante edificio con portero garantiza seguridad y confort.",
   },
   "casamomi.service.wifi": { it: "Wi-Fi Gratuito", en: "Free Wi-Fi", fr: "Wi-Fi Gratuit", es: "Wi-Fi Gratuito" },
   "casamomi.service.wifi.desc": {
@@ -331,10 +339,10 @@ export const translations: Translations = {
     es: "Servicio de alquiler de bicicletas y coches",
   },
   "casamomi.nearby.mergellina": {
-    it: "Stazione metro — a soli 100 metri, collegamento con tutta la città",
-    en: "Metro station — just 100 meters away, connected to the whole city",
-    fr: "Station de métro — à seulement 100 mètres, connexion avec toute la ville",
-    es: "Estación de metro — a solo 100 metros, conexión con toda la ciudad",
+    it: "Stazione metro — a pochi passi, collegamento con tutta la città",
+    en: "Metro station — just steps away, connected to the whole city",
+    fr: "Station de métro — à quelques pas, connexion avec toute la ville",
+    es: "Estación de metro — a pocos pasos, conexión con toda la ciudad",
   },
   "casamomi.nearby.lungomare": {
     it: "Lungomare Caracciolo — a 350 metri, la passeggiata più bella di Napoli",

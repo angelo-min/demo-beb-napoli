@@ -6,28 +6,28 @@ import { motion } from "framer-motion";
 import { Reveal, AnimatedLine } from "@/components/motion";
 
 const topRow = [
-  "/alegria/06B3A47C-83F1-4BE6-A3D7-0ABE0FD337A0.JPG",
-  "/grafi-jeremiah-I1MBKpoC61k-unsplash.jpg",
-  "/alegria/353E72DD-45D1-4200-813A-807B58B3C564.JPG",
-  "/riccardo-tuninato-qIjfxufh5F0-unsplash.jpg",
-  "/casa-momi/2446EC54-EE51-4B78-85E0-87BAF8636238.JPG",
   "/sebastian-leonhardt-PkWac9CLWVA-unsplash.jpg",
-  "/alegria/2634CC9D-24B2-4702-B936-261A1D0AA4E5.JPG",
-  "/casa-momi/232F863B-66EB-49FB-B525-57EE967BEA79.JPG",
+  "/grafi-jeremiah-I1MBKpoC61k-unsplash.jpg",
+  "/villa-serena/02-terrace.jpg",
+  "/riccardo-tuninato-qIjfxufh5F0-unsplash.jpg",
+  "/casa-blu/01-living.jpg",
+  "/sebastian-leonhardt-PkWac9CLWVA-unsplash.jpg",
+  "/villa-serena/03-view.jpg",
+  "/casa-blu/02-kitchen.jpg",
   "/victor-malyushev-VZ6SBoDU7EU-unsplash.jpg",
 ];
 
 const bottomRow = [
-  "/casa-momi/092EC8A7-B283-460A-8E02-A2B623D5A50B_4_5005_c.jpeg",
+  "/casa-blu/03-bedroom.jpg",
   "/alessio-bachetti-Kgv2UxpU3cM-unsplash.jpg",
-  "/alegria/36BDB849-704C-4803-8212-752819869E3D.JPG",
+  "/villa-serena/04-bedroom.jpg",
   "/vytenis-malisauskas-X4Y755WM_ug-unsplash.jpg",
-  "/casa-momi/054C569E-BD67-42FE-8F3E-C8E7468518DC_4_5005_c.jpeg",
-  "/alegria/0D847BFA-8851-486D-96B7-E1E597AD023F.JPG",
-  "/casa-momi/136C6F01-0ED0-49AD-A24E-C685E2982E93_4_5005_c.jpeg",
-  "/alegria/57380F2C-A553-4059-82FA-DCFC85036F45.JPG",
-  "/casa-momi/05D1B51E-A98A-4D52-BD54-FB87AE598275_4_5005_c.jpeg",
-  "/alegria/3C7596B1-4FFA-4028-930B-107970288F74.JPG",
+  "/casa-blu/06-bathroom.jpg",
+  "/villa-serena/06-living.jpg",
+  "/naples-hero.jpg",
+  "/villa-serena/08-bathroom.jpg",
+  "/casa-blu/05-interior.jpg",
+  "/villa-serena/07-kitchen.jpg",
 ];
 
 function MarqueeRow({

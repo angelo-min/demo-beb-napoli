@@ -38,7 +38,7 @@ export function Header() {
             }`}
             style={!scrolled ? { textShadow: "0 1px 8px rgba(0,0,0,0.5)" } : undefined}
           >
-            Dimore Mediterranee
+            B&amp;B Demo Napoli
           </Link>
         </motion.div>
 

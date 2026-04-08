@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -17,9 +16,9 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Dimore Mediterranee | Authentic Southern Italian Hospitality",
+  title: "B&B Demo Napoli",
   description:
-    "Experience the warmth of Southern Italy at our boutique B&Bs in Campania. ALEgrìa in the Lattari Mountains and Casa Momi in the heart of Naples.",
+    "Demo sito B&B con prenotazioni dirette e pannello admin.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -57,8 +56,11 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${cormorantGaramond.variable} font-sans antialiased`}
       >
+        <div style={{ background: '#1A1A2E', color: 'white', fontSize: '12px', padding: '6px 16px', textAlign: 'center', position: 'sticky', top: 0, zIndex: 9999 }}>
+          Questo è un sito demo — realizzato da Angelo, sviluppatore freelance |{' '}
+          <a href="mailto:info@mmstudios.it" style={{ color: '#a0aec0', textDecoration: 'underline' }}>info@mmstudios.it</a>
+        </div>
         {children}
-        <Analytics />
       </body>
     </html>
   );

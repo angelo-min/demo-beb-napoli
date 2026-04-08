@@ -29,9 +29,7 @@ export function HomeCta() {
         <Reveal delay={0.5}>
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <motion.a
-              href="https://wa.me/393382266190"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="inline-flex items-center gap-2.5 rounded-lg bg-[#25D366] px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white shadow-lg shadow-[#25D366]/20 transition-colors hover:bg-[#1fb855]"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
@@ -41,7 +39,7 @@ export function HomeCta() {
               <span>{t("whatsapp.cta")}</span>
             </motion.a>
             <motion.a
-              href="tel:+393382266190"
+              href="tel:+390000000000"
               className="inline-flex items-center gap-2.5 rounded-lg bg-primary px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-primary-foreground shadow-lg shadow-primary/20 transition-colors hover:bg-primary/90"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
@@ -56,11 +54,11 @@ export function HomeCta() {
         <Reveal delay={0.7}>
           <div className="mt-10">
             <a
-              href="mailto:info@dimoremediterranee.it"
+              href="mailto:info@mmstudios.it"
               className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <Mail className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
-              <span>info@dimoremediterranee.it</span>
+              <span>info@mmstudios.it</span>
             </a>
           </div>
         </Reveal>

@@ -31,11 +31,11 @@ export function Footer() {
               {t("footer.contact")}
             </h4>
             <a
-              href="mailto:info@dimoremediterranee.it"
+              href="mailto:info@mmstudios.it"
               className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <Mail className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
-              <span>info@dimoremediterranee.it</span>
+              <span>info@mmstudios.it</span>
             </a>
           </StaggerItem>
 
@@ -45,13 +45,11 @@ export function Footer() {
               {t("footer.follow")}
             </h4>
             <a
-              href="https://instagram.com/dimoremediterranee"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <Instagram className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-              <span>@dimoremediterranee</span>
+              <span>@bbdemonapoli</span>
             </a>
           </StaggerItem>
         </Stagger>
@@ -60,7 +58,7 @@ export function Footer() {
         <Reveal delay={0.3}>
           <div className="mt-14 border-t border-border pt-8 text-center">
             <p className="text-xs text-muted-foreground">
-              &copy; {currentYear} Dimore Mediterranee. {t("footer.rights")}.
+              &copy; {currentYear} B&amp;B Demo Napoli. {t("footer.rights")}.
             </p>
           </div>
         </Reveal>

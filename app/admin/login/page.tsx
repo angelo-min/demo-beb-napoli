@@ -113,6 +113,9 @@ function LoginForm() {
             {submitting ? "..." : t("admin.login.submit")}
           </Button>
         </form>
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Demo: usa le credenziali che ti sono state fornite
+        </p>
       </div>
     </div>
   );

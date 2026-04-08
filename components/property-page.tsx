@@ -535,11 +535,11 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
                 {t("footer.contact")}
               </h4>
               <a
-                href="mailto:info@dimoremediterranee.it"
+                href="mailto:info@mmstudios.it"
                 className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-4 w-4" />
-                <span>info@dimoremediterranee.it</span>
+                <span>info@mmstudios.it</span>
               </a>
             </div>
 
@@ -548,20 +548,18 @@ export function PropertyPage({ config }: { config: PropertyConfig }) {
                 {t("footer.follow")}
               </h4>
               <a
-                href="https://instagram.com/dimoremediterranee"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Instagram className="h-4 w-4" />
-                <span>@dimoremediterranee</span>
+                <span>@bbdemonapoli</span>
               </a>
             </div>
           </div>
 
           <div className="mt-12 border-t border-border pt-8 text-center">
             <p className="text-xs text-muted-foreground">
-              &copy; {currentYear} Dimore Mediterranee. {t("footer.rights")}.
+              &copy; {currentYear} B&amp;B Demo Napoli. {t("footer.rights")}.
             </p>
           </div>
         </div>

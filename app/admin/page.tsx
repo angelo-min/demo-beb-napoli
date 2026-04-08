@@ -36,8 +36,8 @@ function AdminContent() {
   };
 
   const properties: { id: PropertyId; name: string; location: string }[] = [
-    { id: "alegria", name: "ALEgrìa — Nido degli Dei", location: "Agerola" },
-    { id: "casamomi", name: "Casa Momi Mergellina", location: "Napoli" },
+    { id: "alegria", name: "Villa Serena", location: "Costiera Amalfitana" },
+    { id: "casamomi", name: "Casa Blu", location: "Napoli, Lungomare" },
   ];
 
   const rooms: { id: Room; label: string }[] = [

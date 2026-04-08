@@ -116,16 +116,14 @@ export function BookingSection({
               </p>
               <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
                 <a
-                  href={`https://wa.me/393382266190?text=${encodeURIComponent(t(`whatsapp.${propertyId}.message`))}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   className="inline-flex items-center gap-1.5 rounded-sm bg-[#25D366] px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-[#1fb855]"
                 >
                   <MessageCircle className="h-3.5 w-3.5" />
                   WhatsApp
                 </a>
                 <a
-                  href="tel:+393382266190"
+                  href="tel:+390000000000"
                   className="inline-flex items-center gap-1.5 rounded-sm bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   <Phone className="h-3.5 w-3.5" />
