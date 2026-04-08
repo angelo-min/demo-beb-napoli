@@ -15,6 +15,15 @@ const casamomiConfig = {
   ratingKey: "casamomi.rating",
   bookingUrl: "https://www.booking.com/hotel/it/casa-momi-mergellina.it.html",
   airbnbUrl: "https://www.airbnb.co.in/rooms/1189788664279701254",
+  heroImages: [
+    "/naples-hero.jpg",
+    "/grafi-jeremiah-I1MBKpoC61k-unsplash.jpg",
+    "/vytenis-malisauskas-X4Y755WM_ug-unsplash.jpg",
+    "/vincenzo-de-simone-oj9MRmW2FSw-unsplash.jpg",
+    "/yahya-momtaz-T74tIuXRFfk-unsplash.jpg",
+    "/riccardo-tuninato-qIjfxufh5F0-unsplash.jpg",
+    "/victor-malyushev-VZ6SBoDU7EU-unsplash.jpg",
+  ],
   photos: [
     "/casa-momi/232F863B-66EB-49FB-B525-57EE967BEA79.JPG",
     "/casa-momi/B4BC50C3-DA53-4149-8BE2-1FE439395D64.JPG",

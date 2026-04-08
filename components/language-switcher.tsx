@@ -11,7 +11,7 @@ const languageNames: Record<Language, string> = {
   es: "Español",
 };
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ variant = "dark" }: { variant?: "light" | "dark" }) {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -26,11 +26,18 @@ export function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const isLight = variant === "light";
+
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-9 items-center gap-1 rounded-full border border-border px-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+        className={`flex h-9 items-center gap-1 rounded-full border px-3 text-sm font-medium transition-colors duration-500 ${
+          isLight
+            ? "border-white/30 text-white hover:bg-white/10"
+            : "border-border text-foreground hover:bg-secondary"
+        }`}
+        style={isLight ? { textShadow: "0 1px 4px rgba(0,0,0,0.4)" } : undefined}
         aria-label="Switch language"
       >
         {publicLanguageLabels[language]}

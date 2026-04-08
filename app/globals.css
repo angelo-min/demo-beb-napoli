@@ -105,3 +105,11 @@
     text-wrap: balance;
   }
 }
+
+/* Smooth scrollbar for the gallery */
+@layer base {
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}

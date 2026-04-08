@@ -70,6 +70,7 @@ export const translations: Translations = {
   },
 
   // Why Choose Us
+  "gallery.title": { it: "I Nostri Spazi", en: "Our Spaces", fr: "Nos Espaces", es: "Nuestros Espacios" },
   "why.title": { it: "Perché Sceglierci", en: "Why Choose Us", fr: "Pourquoi Nous Choisir", es: "Por Qué Elegirnos" },
   "why.direct.title": { it: "Prenotazione Diretta", en: "Book Direct", fr: "Réservation Directe", es: "Reserva Directa" },
   "why.direct.desc": {
@@ -521,6 +522,19 @@ export const translations: Translations = {
   "admin.pricing.minNights": { it: "Notti Minime", en: "Min Nights" },
   "admin.pricing.add": { it: "Aggiungi Tariffa", en: "Add Rate" },
   "admin.pricing.noPricing": { it: "Nessuna tariffa configurata", en: "No rates configured" },
+  "admin.pricing.weekendPrice": { it: "Prezzo Weekend (€)", en: "Weekend Price (€)" },
+  "admin.pricing.weekdayPrice": { it: "Prezzo Infrasettimanale", en: "Weekday Price" },
+  "admin.pricing.override": { it: "Personalizzato", en: "Custom" },
+  "admin.pricing.setPrice": { it: "Imposta Prezzo", en: "Set Price" },
+  "admin.pricing.removeOverride": { it: "Rimuovi Override", en: "Remove Override" },
+  "admin.pricing.selectedDates": { it: "Date Selezionate", en: "Selected Dates" },
+  "admin.pricing.noPrice": { it: "Nessun prezzo", en: "No price" },
+  "admin.pricing.calendarTitle": { it: "Calendario Prezzi", en: "Pricing Calendar" },
+  "admin.pricing.seasonsTitle": { it: "Tariffe Stagionali", en: "Seasonal Rates" },
+  "admin.pricing.legend.weekday": { it: "Infrasettimanale", en: "Weekday" },
+  "admin.pricing.legend.weekend": { it: "Weekend", en: "Weekend" },
+  "admin.pricing.legend.custom": { it: "Personalizzato", en: "Custom" },
+  "admin.pricing.legend.noPrice": { it: "Non configurato", en: "Not configured" },
 
   // Days of week (IT/EN only)
   "day.mon": { it: "Lun", en: "Mon" },

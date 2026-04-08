@@ -72,6 +72,7 @@ export interface Database {
           start_date: string;
           end_date: string;
           price_per_night: number;
+          weekend_price: number | null;
           min_nights: number;
           created_at: string;
         };
@@ -83,6 +84,7 @@ export interface Database {
           start_date: string;
           end_date: string;
           price_per_night: number;
+          weekend_price?: number | null;
           min_nights?: number;
           created_at?: string;
         };
@@ -94,7 +96,35 @@ export interface Database {
           start_date?: string;
           end_date?: string;
           price_per_night?: number;
+          weekend_price?: number | null;
           min_nights?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      pricing_overrides: {
+        Row: {
+          id: string;
+          property_id: "alegria" | "casamomi";
+          room: "gold" | "silver" | "whole" | null;
+          date: string;
+          price: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          property_id: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          date: string;
+          price: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          property_id?: "alegria" | "casamomi";
+          room?: "gold" | "silver" | "whole" | null;
+          date?: string;
+          price?: number;
           created_at?: string;
         };
         Relationships: [];

@@ -14,6 +14,10 @@ const alegriaConfig = {
   ratingKey: "alegria.rating",
   bookingUrl: "https://www.booking.com/hotel/it/alegria-il-nido-degli-dei.it.html",
   airbnbUrl: "https://www.airbnb.it/rooms/1208058051469492815",
+  heroImages: [
+    "/alessio-bachetti-Kgv2UxpU3cM-unsplash.jpg",
+    "/sebastian-leonhardt-PkWac9CLWVA-unsplash.jpg",
+  ],
   photos: [
     "/alegria/DF5F6208-A82B-41B3-A860-5EE0DAC8DB53.JPG",
     "/alegria/049031C9-C0B7-4499-8196-9EE80FC2F19B.JPG",
@@ -50,13 +54,9 @@ const alegriaConfig = {
   ],
   services: [
     { titleKey: "alegria.service.terrace", descKey: "alegria.service.terrace.desc", icon: "mountain" },
-    { titleKey: "alegria.service.breakfast", descKey: "alegria.service.breakfast.desc", icon: "coffee" },
-    { titleKey: "alegria.service.garden", descKey: "alegria.service.garden.desc", icon: "flower" },
     { titleKey: "alegria.service.wifi", descKey: "alegria.service.wifi.desc", icon: "wifi" },
     { titleKey: "alegria.service.parking", descKey: "alegria.service.parking.desc", icon: "car" },
     { titleKey: "alegria.service.ac", descKey: "alegria.service.ac.desc", icon: "thermometer" },
-    { titleKey: "alegria.service.ev", descKey: "alegria.service.ev.desc", icon: "zap" },
-    { titleKey: "alegria.service.eco", descKey: "alegria.service.eco.desc", icon: "leaf" },
   ],
   nearbyKeys: [
     "alegria.nearby.sentiero",

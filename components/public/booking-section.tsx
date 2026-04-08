@@ -22,7 +22,7 @@ export function BookingSection({
   airbnbUrl,
 }: BookingSectionProps) {
   const { t } = useLanguage();
-  const { fetchAvailability, fetchPricing, loading } = usePublicBookingStore();
+  const { fetchAvailability, fetchPricing, fetchOverrides, loading } = usePublicBookingStore();
 
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(
     rooms && rooms.length > 0 ? rooms[0] : null
@@ -34,7 +34,8 @@ export function BookingSection({
   useEffect(() => {
     fetchAvailability(propertyId);
     fetchPricing(propertyId);
-  }, [propertyId, fetchAvailability, fetchPricing]);
+    fetchOverrides(propertyId);
+  }, [propertyId, fetchAvailability, fetchPricing, fetchOverrides]);
 
   const handleDateSelect = (ci: string, co: string | null) => {
     setCheckIn(ci);

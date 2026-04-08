@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n";
 import { PropertyCard } from "./property-card";
+import { Reveal, AnimatedLine, Stagger, StaggerItem } from "@/components/motion";
 
 const properties = [
   {
@@ -24,20 +25,24 @@ export function PropertiesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="properties" className="px-6 py-20 md:px-8 md:py-32">
+    <section id="properties" className="px-6 py-24 md:px-8 md:py-36">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center md:mb-16">
-          <h2 className="font-serif text-3xl font-medium text-foreground md:text-4xl lg:text-5xl">
-            {t("properties.title")}
-          </h2>
-          <div className="mx-auto mt-4 h-px w-16 bg-primary/40" />
+        <div className="mb-16 text-center md:mb-20">
+          <Reveal>
+            <h2 className="font-serif text-3xl font-medium text-foreground md:text-4xl lg:text-5xl">
+              {t("properties.title")}
+            </h2>
+          </Reveal>
+          <AnimatedLine className="mx-auto mt-4 h-px w-16 bg-primary/40" delay={0.4} />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+        <Stagger className="grid gap-8 md:grid-cols-2 md:gap-10" staggerDelay={0.2}>
           {properties.map((property) => (
-            <PropertyCard key={property.nameKey} {...property} />
+            <StaggerItem key={property.nameKey}>
+              <PropertyCard {...property} />
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

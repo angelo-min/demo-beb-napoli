@@ -10,7 +10,14 @@ export interface PricingRule {
   startDate: string;
   endDate: string;
   pricePerNight: number;
+  weekendPrice: number | null;
   minNights: number;
+}
+
+export interface PricingOverride {
+  date: string;
+  price: number;
+  room: Room | null;
 }
 
 export interface BookedDateRange {
@@ -32,9 +39,15 @@ export interface BookingRequestData {
   totalPrice: number | null;
 }
 
+function isWeekend(dateStr: string): boolean {
+  const day = new Date(dateStr).getDay();
+  return day === 5 || day === 6; // Friday or Saturday
+}
+
 interface PublicBookingStore {
   bookedDates: BookedDateRange[];
   pricing: PricingRule[];
+  overrides: PricingOverride[];
   loading: boolean;
   submitting: boolean;
   error: string | null;
@@ -42,6 +55,7 @@ interface PublicBookingStore {
 
   fetchAvailability: (propertyId: PropertyId) => Promise<void>;
   fetchPricing: (propertyId: PropertyId) => Promise<void>;
+  fetchOverrides: (propertyId: PropertyId) => Promise<void>;
   submitRequest: (data: BookingRequestData) => Promise<boolean>;
   calculatePrice: (
     propertyId: PropertyId,
@@ -60,6 +74,7 @@ interface PublicBookingStore {
 export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => ({
   bookedDates: [],
   pricing: [],
+  overrides: [],
   loading: false,
   submitting: false,
   error: null,
@@ -108,7 +123,27 @@ export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => 
         startDate: row.start_date,
         endDate: row.end_date,
         pricePerNight: Number(row.price_per_night),
+        weekendPrice: row.weekend_price != null ? Number(row.weekend_price) : null,
         minNights: row.min_nights,
+      })),
+    });
+  },
+
+  fetchOverrides: async (propertyId) => {
+    const { data, error } = await supabase
+      .from("pricing_overrides")
+      .select("*")
+      .eq("property_id", propertyId);
+
+    if (error) {
+      set({ error: error.message });
+      return;
+    }
+    set({
+      overrides: (data ?? []).map((row) => ({
+        date: row.date,
+        price: Number(row.price),
+        room: row.room as Room | null,
       })),
     });
   },
@@ -137,7 +172,7 @@ export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => 
   },
 
   calculatePrice: (propertyId, room, checkIn, checkOut) => {
-    const { pricing } = get();
+    const { pricing, overrides } = get();
     if (!checkIn || !checkOut) return null;
 
     const start = new Date(checkIn);
@@ -150,13 +185,22 @@ export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => 
     let total = 0;
     let foundPricing = false;
 
-    // Calculate price for each night
     for (let i = 0; i < nights; i++) {
       const date = new Date(start);
       date.setDate(date.getDate() + i);
       const dateStr = date.toISOString().split("T")[0];
 
-      // Find matching pricing rule
+      // 1. Check for override (exact room match, then room=null)
+      const override = overrides.find(
+        (o) => o.date === dateStr && (o.room === room || o.room === null)
+      );
+      if (override) {
+        total += override.price;
+        foundPricing = true;
+        continue;
+      }
+
+      // 2. Find matching season rule
       const rule = pricing.find(
         (p) =>
           p.propertyId === propertyId &&
@@ -166,7 +210,12 @@ export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => 
       );
 
       if (rule) {
-        total += rule.pricePerNight;
+        // Use weekend price if applicable
+        if (isWeekend(dateStr) && rule.weekendPrice != null) {
+          total += rule.weekendPrice;
+        } else {
+          total += rule.pricePerNight;
+        }
         foundPricing = true;
       }
     }
