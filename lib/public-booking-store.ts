@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { supabase } from "./supabase";
 import type { PropertyId, Room } from "./booking-store";
 
 export interface PricingRule {
@@ -44,6 +43,214 @@ function isWeekend(dateStr: string): boolean {
   return day === 5 || day === 6; // Friday or Saturday
 }
 
+// ---------------------------------------------------------------------------
+// Mock data — no Supabase connection. All data lives in memory for the demo.
+// ---------------------------------------------------------------------------
+
+// Seasonal pricing rules covering 2026 for both properties.
+const MOCK_PRICING: PricingRule[] = [
+  // Alegria — whole property (room = null)
+  {
+    id: "ale-low-1",
+    propertyId: "alegria",
+    room: null,
+    seasonName: "Bassa stagione",
+    startDate: "2026-01-01",
+    endDate: "2026-03-31",
+    pricePerNight: 120,
+    weekendPrice: 140,
+    minNights: 2,
+  },
+  {
+    id: "ale-mid-1",
+    propertyId: "alegria",
+    room: null,
+    seasonName: "Media stagione",
+    startDate: "2026-04-01",
+    endDate: "2026-05-31",
+    pricePerNight: 160,
+    weekendPrice: 190,
+    minNights: 2,
+  },
+  {
+    id: "ale-high",
+    propertyId: "alegria",
+    room: null,
+    seasonName: "Alta stagione",
+    startDate: "2026-06-01",
+    endDate: "2026-09-30",
+    pricePerNight: 220,
+    weekendPrice: 260,
+    minNights: 3,
+  },
+  {
+    id: "ale-mid-2",
+    propertyId: "alegria",
+    room: null,
+    seasonName: "Media stagione",
+    startDate: "2026-10-01",
+    endDate: "2026-10-31",
+    pricePerNight: 160,
+    weekendPrice: 190,
+    minNights: 2,
+  },
+  {
+    id: "ale-low-2",
+    propertyId: "alegria",
+    room: null,
+    seasonName: "Bassa stagione",
+    startDate: "2026-11-01",
+    endDate: "2026-12-31",
+    pricePerNight: 120,
+    weekendPrice: 140,
+    minNights: 2,
+  },
+
+  // Casa Momi — Gold room
+  {
+    id: "cm-gold-low-1",
+    propertyId: "casamomi",
+    room: "gold",
+    seasonName: "Bassa stagione",
+    startDate: "2026-01-01",
+    endDate: "2026-03-31",
+    pricePerNight: 95,
+    weekendPrice: 115,
+    minNights: 1,
+  },
+  {
+    id: "cm-gold-mid-1",
+    propertyId: "casamomi",
+    room: "gold",
+    seasonName: "Media stagione",
+    startDate: "2026-04-01",
+    endDate: "2026-05-31",
+    pricePerNight: 130,
+    weekendPrice: 155,
+    minNights: 1,
+  },
+  {
+    id: "cm-gold-high",
+    propertyId: "casamomi",
+    room: "gold",
+    seasonName: "Alta stagione",
+    startDate: "2026-06-01",
+    endDate: "2026-09-30",
+    pricePerNight: 180,
+    weekendPrice: 210,
+    minNights: 2,
+  },
+  {
+    id: "cm-gold-mid-2",
+    propertyId: "casamomi",
+    room: "gold",
+    seasonName: "Media stagione",
+    startDate: "2026-10-01",
+    endDate: "2026-10-31",
+    pricePerNight: 130,
+    weekendPrice: 155,
+    minNights: 1,
+  },
+  {
+    id: "cm-gold-low-2",
+    propertyId: "casamomi",
+    room: "gold",
+    seasonName: "Bassa stagione",
+    startDate: "2026-11-01",
+    endDate: "2026-12-31",
+    pricePerNight: 95,
+    weekendPrice: 115,
+    minNights: 1,
+  },
+
+  // Casa Momi — Silver room
+  {
+    id: "cm-silver-low-1",
+    propertyId: "casamomi",
+    room: "silver",
+    seasonName: "Bassa stagione",
+    startDate: "2026-01-01",
+    endDate: "2026-03-31",
+    pricePerNight: 75,
+    weekendPrice: 90,
+    minNights: 1,
+  },
+  {
+    id: "cm-silver-mid-1",
+    propertyId: "casamomi",
+    room: "silver",
+    seasonName: "Media stagione",
+    startDate: "2026-04-01",
+    endDate: "2026-05-31",
+    pricePerNight: 105,
+    weekendPrice: 125,
+    minNights: 1,
+  },
+  {
+    id: "cm-silver-high",
+    propertyId: "casamomi",
+    room: "silver",
+    seasonName: "Alta stagione",
+    startDate: "2026-06-01",
+    endDate: "2026-09-30",
+    pricePerNight: 150,
+    weekendPrice: 175,
+    minNights: 2,
+  },
+  {
+    id: "cm-silver-mid-2",
+    propertyId: "casamomi",
+    room: "silver",
+    seasonName: "Media stagione",
+    startDate: "2026-10-01",
+    endDate: "2026-10-31",
+    pricePerNight: 105,
+    weekendPrice: 125,
+    minNights: 1,
+  },
+  {
+    id: "cm-silver-low-2",
+    propertyId: "casamomi",
+    room: "silver",
+    seasonName: "Bassa stagione",
+    startDate: "2026-11-01",
+    endDate: "2026-12-31",
+    pricePerNight: 75,
+    weekendPrice: 90,
+    minNights: 1,
+  },
+];
+
+// A few already-booked ranges so the calendar shows realistic unavailability.
+const MOCK_BOOKED_DATES: Record<PropertyId, BookedDateRange[]> = {
+  alegria: [
+    { checkIn: "2026-04-14", checkOut: "2026-04-17", room: null },
+    { checkIn: "2026-04-24", checkOut: "2026-04-27", room: null },
+    { checkIn: "2026-05-10", checkOut: "2026-05-14", room: null },
+    { checkIn: "2026-06-20", checkOut: "2026-06-28", room: null },
+    { checkIn: "2026-07-15", checkOut: "2026-07-22", room: null },
+    { checkIn: "2026-08-08", checkOut: "2026-08-20", room: null },
+  ],
+  casamomi: [
+    { checkIn: "2026-04-12", checkOut: "2026-04-15", room: "gold" },
+    { checkIn: "2026-04-20", checkOut: "2026-04-23", room: "silver" },
+    { checkIn: "2026-05-05", checkOut: "2026-05-09", room: "gold" },
+    { checkIn: "2026-05-17", checkOut: "2026-05-20", room: "silver" },
+    { checkIn: "2026-06-12", checkOut: "2026-06-18", room: "gold" },
+    { checkIn: "2026-07-04", checkOut: "2026-07-11", room: "silver" },
+    { checkIn: "2026-08-01", checkOut: "2026-08-15", room: "gold" },
+  ],
+};
+
+const MOCK_OVERRIDES: Record<PropertyId, PricingOverride[]> = {
+  alegria: [],
+  casamomi: [],
+};
+
+// Simulate network latency so the loading states still exercise.
+const simulateLatency = (ms = 250) =>
+  new Promise<void>((resolve) => setTimeout(resolve, ms));
+
 interface PublicBookingStore {
   bookedDates: BookedDateRange[];
   pricing: PricingRule[];
@@ -82,91 +289,31 @@ export const usePublicBookingStore = create<PublicBookingStore>()((set, get) => 
 
   fetchAvailability: async (propertyId) => {
     set({ loading: true, error: null });
-    const today = new Date().toISOString().split("T")[0];
-    const { data, error } = await supabase
-      .from("bookings")
-      .select("check_in, check_out, room")
-      .eq("property_id", propertyId)
-      .gte("check_out", today);
-
-    if (error) {
-      set({ error: error.message, loading: false });
-      return;
-    }
+    await simulateLatency();
     set({
-      bookedDates: (data ?? []).map((row) => ({
-        checkIn: row.check_in,
-        checkOut: row.check_out,
-        room: row.room as Room | null,
-      })),
+      bookedDates: MOCK_BOOKED_DATES[propertyId] ?? [],
       loading: false,
     });
   },
 
   fetchPricing: async (propertyId) => {
-    const { data, error } = await supabase
-      .from("pricing")
-      .select("*")
-      .eq("property_id", propertyId)
-      .order("start_date", { ascending: true });
-
-    if (error) {
-      set({ error: error.message });
-      return;
-    }
+    await simulateLatency();
     set({
-      pricing: (data ?? []).map((row) => ({
-        id: row.id,
-        propertyId: row.property_id as PropertyId,
-        room: row.room as Room | null,
-        seasonName: row.season_name,
-        startDate: row.start_date,
-        endDate: row.end_date,
-        pricePerNight: Number(row.price_per_night),
-        weekendPrice: row.weekend_price != null ? Number(row.weekend_price) : null,
-        minNights: row.min_nights,
-      })),
+      pricing: MOCK_PRICING.filter((p) => p.propertyId === propertyId),
     });
   },
 
   fetchOverrides: async (propertyId) => {
-    const { data, error } = await supabase
-      .from("pricing_overrides")
-      .select("*")
-      .eq("property_id", propertyId);
-
-    if (error) {
-      set({ error: error.message });
-      return;
-    }
+    await simulateLatency();
     set({
-      overrides: (data ?? []).map((row) => ({
-        date: row.date,
-        price: Number(row.price),
-        room: row.room as Room | null,
-      })),
+      overrides: MOCK_OVERRIDES[propertyId] ?? [],
     });
   },
 
-  submitRequest: async (data) => {
+  submitRequest: async (_data) => {
     set({ submitting: true, error: null, success: false });
-    const { error } = await supabase.from("booking_requests").insert({
-      property_id: data.propertyId,
-      room: data.room,
-      guest_name: data.guestName,
-      guest_email: data.guestEmail,
-      guest_phone: data.guestPhone,
-      check_in: data.checkIn,
-      check_out: data.checkOut,
-      guests_count: data.guestsCount,
-      notes: data.notes,
-      total_price: data.totalPrice,
-    });
-
-    if (error) {
-      set({ error: error.message, submitting: false });
-      return false;
-    }
+    // Simulate a backend call.
+    await simulateLatency(800);
     set({ submitting: false, success: true });
     return true;
   },
